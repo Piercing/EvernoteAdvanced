@@ -14,6 +14,8 @@
 		5268D9DB1C582BFB004B6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */; };
 		5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5268D9DC1C582BFB004B6BB2 /* LaunchScreen.storyboard */; };
 		5268D9E91C582BFC004B6BB2 /* EverpobreAdvancedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9E81C582BFC004B6BB2 /* EverpobreAdvancedTests.m */; };
+		5268D9F51C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */; };
+		5268D9F91C583045004B6BB2 /* Everpobre.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		5268D9E41C582BFC004B6BB2 /* EverpobreAdvancedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverpobreAdvancedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5268D9E81C582BFC004B6BB2 /* EverpobreAdvancedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverpobreAdvancedTests.m; sourceTree = "<group>"; };
 		5268D9EA1C582BFC004B6BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5268D9F31C582C1F004B6BB2 /* AGTSimpleCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTSimpleCoreDataStack.h; sourceTree = "<group>"; };
+		5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTSimpleCoreDataStack.m; sourceTree = "<group>"; };
+		5268D9F81C583045004B6BB2 /* Everpobre.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		5268D9CD1C582BFB004B6BB2 /* EverpobreAdvanced */ = {
 			isa = PBXGroup;
 			children = (
+				5268D9F61C582C2C004B6BB2 /* Models */,
 				5268D9D11C582BFB004B6BB2 /* AppDelegate.h */,
 				5268D9D21C582BFB004B6BB2 /* AppDelegate.m */,
 				5268D9D41C582BFB004B6BB2 /* ViewController.h */,
@@ -109,6 +115,16 @@
 				5268D9EA1C582BFC004B6BB2 /* Info.plist */,
 			);
 			path = EverpobreAdvancedTests;
+			sourceTree = "<group>";
+		};
+		5268D9F61C582C2C004B6BB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5268D9F31C582C1F004B6BB2 /* AGTSimpleCoreDataStack.h */,
+				5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */,
+				5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +231,8 @@
 			files = (
 				5268D9D61C582BFB004B6BB2 /* ViewController.m in Sources */,
 				5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */,
+				5268D9F91C583045004B6BB2 /* Everpobre.xcdatamodeld in Sources */,
+				5268D9F51C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m in Sources */,
 				5268D9D01C582BFB004B6BB2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +430,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5268D9F81C583045004B6BB2 /* Everpobre.xcdatamodel */,
+			);
+			currentVersion = 5268D9F81C583045004B6BB2 /* Everpobre.xcdatamodel */;
+			path = Everpobre.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5268D9C31C582BFB004B6BB2 /* Project object */;
 }
