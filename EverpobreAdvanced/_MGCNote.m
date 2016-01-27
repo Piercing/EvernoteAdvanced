@@ -1,0 +1,60 @@
+// DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// Make changes to MGCNote.m instead.
+
+#import "_MGCNote.h"
+
+const struct MGCNoteAttributes MGCNoteAttributes = {
+	.creationDate = @"creationDate",
+	.modificationDate = @"modificationDate",
+	.name = @"name",
+	.text = @"text",
+};
+
+const struct MGCNoteRelationships MGCNoteRelationships = {
+	.notebook = @"notebook",
+	.photo = @"photo",
+};
+
+@implementation MGCNoteID
+@end
+
+@implementation _MGCNote
+
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
+	NSParameterAssert(moc_);
+	return [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:moc_];
+}
+
++ (NSString*)entityName {
+	return @"Note";
+}
+
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
+	NSParameterAssert(moc_);
+	return [NSEntityDescription entityForName:@"Note" inManagedObjectContext:moc_];
+}
+
+- (MGCNoteID*)objectID {
+	return (MGCNoteID*)[super objectID];
+}
+
++ (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
+	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
+
+	return keyPaths;
+}
+
+@dynamic creationDate;
+
+@dynamic modificationDate;
+
+@dynamic name;
+
+@dynamic text;
+
+@dynamic notebook;
+
+@dynamic photo;
+
+@end
+
