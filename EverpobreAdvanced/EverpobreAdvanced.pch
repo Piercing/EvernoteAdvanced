@@ -1,0 +1,24 @@
+//
+//  EverpobreAdvanced.pch
+//  EverpobreAdvanced
+//
+//  Created by MacBook Pro on 28/1/16.
+//  Copyright © 2016 weblogmerlos.com. All rights reserved.
+//
+
+//
+// Prefix header
+//
+// The contents of this file are implicitly
+// included at the beginning of every source file
+//
+
+#import <availability.h>
+
+#ifdef __OBJC__
+#import <uikit uikit.h="">
+#import <foundation foundation.h="">
+#import "Settings.h"
+
+#endif
+

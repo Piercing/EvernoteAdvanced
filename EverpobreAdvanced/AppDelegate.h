@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+// forward declaration
+@class AGTSimpleCoreDataStack;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) AGTSimpleCoreDataStack * model;
 
 @end
 

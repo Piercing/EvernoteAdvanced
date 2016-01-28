@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207F3B51C585AF500C86E8A /* _MGCPhoto.m */; };
+		5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207F3B81C585B0B00C86E8A /* MGCPhoto.m */; };
 		5268D9D01C582BFB004B6BB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9CF1C582BFB004B6BB2 /* main.m */; };
 		5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9D21C582BFB004B6BB2 /* AppDelegate.m */; };
-		5268D9D61C582BFB004B6BB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9D51C582BFB004B6BB2 /* ViewController.m */; };
-		5268D9D91C582BFB004B6BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5268D9D71C582BFB004B6BB2 /* Main.storyboard */; };
 		5268D9DB1C582BFB004B6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */; };
 		5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5268D9DC1C582BFB004B6BB2 /* LaunchScreen.storyboard */; };
 		5268D9E91C582BFC004B6BB2 /* EverpobreAdvancedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9E81C582BFC004B6BB2 /* EverpobreAdvancedTests.m */; };
 		5268D9F51C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */; };
 		5268D9F91C583045004B6BB2 /* Everpobre.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */; };
+		5268DA141C58516F004B6BB2 /* _MGCNamedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA0F1C58516F004B6BB2 /* _MGCNamedEntity.m */; };
+		5268DA151C58516F004B6BB2 /* _MGCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA111C58516F004B6BB2 /* _MGCNote.m */; };
+		5268DA161C58516F004B6BB2 /* _MGCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA131C58516F004B6BB2 /* _MGCNotebook.m */; };
+		5268DA1D1C585188004B6BB2 /* MGCNamedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA181C585188004B6BB2 /* MGCNamedEntity.m */; };
+		5268DA1E1C585188004B6BB2 /* MGCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA1A1C585188004B6BB2 /* MGCNote.m */; };
+		5268DA1F1C585188004B6BB2 /* MGCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA1C1C585188004B6BB2 /* MGCNotebook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +35,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5207F3B41C585AF500C86E8A /* _MGCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MGCPhoto.h; sourceTree = "<group>"; };
+		5207F3B51C585AF500C86E8A /* _MGCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MGCPhoto.m; sourceTree = "<group>"; };
+		5207F3B71C585B0B00C86E8A /* MGCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCPhoto.h; sourceTree = "<group>"; };
+		5207F3B81C585B0B00C86E8A /* MGCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCPhoto.m; sourceTree = "<group>"; };
+		5228149F1C59B7AF009D07F0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		522814A01C59B8C3009D07F0 /* EverpobreAdvanced.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverpobreAdvanced.pch; sourceTree = "<group>"; };
 		5268D9CB1C582BFB004B6BB2 /* EverpobreAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverpobreAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5268D9CF1C582BFB004B6BB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5268D9D11C582BFB004B6BB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5268D9D21C582BFB004B6BB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5268D9D41C582BFB004B6BB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5268D9D51C582BFB004B6BB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5268D9D81C582BFB004B6BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5268D9DD1C582BFB004B6BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5268D9DF1C582BFB004B6BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +54,18 @@
 		5268D9F31C582C1F004B6BB2 /* AGTSimpleCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTSimpleCoreDataStack.h; sourceTree = "<group>"; };
 		5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTSimpleCoreDataStack.m; sourceTree = "<group>"; };
 		5268D9F81C583045004B6BB2 /* Everpobre.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre.xcdatamodel; sourceTree = "<group>"; };
+		5268DA0E1C58516F004B6BB2 /* _MGCNamedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MGCNamedEntity.h; sourceTree = "<group>"; };
+		5268DA0F1C58516F004B6BB2 /* _MGCNamedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MGCNamedEntity.m; sourceTree = "<group>"; };
+		5268DA101C58516F004B6BB2 /* _MGCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MGCNote.h; sourceTree = "<group>"; };
+		5268DA111C58516F004B6BB2 /* _MGCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MGCNote.m; sourceTree = "<group>"; };
+		5268DA121C58516F004B6BB2 /* _MGCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MGCNotebook.h; sourceTree = "<group>"; };
+		5268DA131C58516F004B6BB2 /* _MGCNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MGCNotebook.m; sourceTree = "<group>"; };
+		5268DA171C585188004B6BB2 /* MGCNamedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNamedEntity.h; sourceTree = "<group>"; };
+		5268DA181C585188004B6BB2 /* MGCNamedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNamedEntity.m; sourceTree = "<group>"; };
+		5268DA191C585188004B6BB2 /* MGCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNote.h; sourceTree = "<group>"; };
+		5268DA1A1C585188004B6BB2 /* MGCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNote.m; sourceTree = "<group>"; };
+		5268DA1B1C585188004B6BB2 /* MGCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebook.h; sourceTree = "<group>"; };
+		5268DA1C1C585188004B6BB2 /* MGCNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		522814A11C59BF12009D07F0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5228149F1C59B7AF009D07F0 /* Settings.h */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		5268D9C21C582BFB004B6BB2 = {
 			isa = PBXGroup;
 			children = (
@@ -86,16 +115,15 @@
 		5268D9CD1C582BFB004B6BB2 /* EverpobreAdvanced */ = {
 			isa = PBXGroup;
 			children = (
+				522814A11C59BF12009D07F0 /* Helpers */,
 				5268D9F61C582C2C004B6BB2 /* Models */,
 				5268D9D11C582BFB004B6BB2 /* AppDelegate.h */,
 				5268D9D21C582BFB004B6BB2 /* AppDelegate.m */,
-				5268D9D41C582BFB004B6BB2 /* ViewController.h */,
-				5268D9D51C582BFB004B6BB2 /* ViewController.m */,
-				5268D9D71C582BFB004B6BB2 /* Main.storyboard */,
 				5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */,
 				5268D9DC1C582BFB004B6BB2 /* LaunchScreen.storyboard */,
 				5268D9DF1C582BFB004B6BB2 /* Info.plist */,
 				5268D9CE1C582BFB004B6BB2 /* Supporting Files */,
+				522814A01C59B8C3009D07F0 /* EverpobreAdvanced.pch */,
 			);
 			path = EverpobreAdvanced;
 			sourceTree = "<group>";
@@ -120,11 +148,43 @@
 		5268D9F61C582C2C004B6BB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5268DA0C1C5846C4004B6BB2 /* Machine */,
+				5268DA0D1C5846CF004B6BB2 /* Human */,
 				5268D9F31C582C1F004B6BB2 /* AGTSimpleCoreDataStack.h */,
 				5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */,
 				5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		5268DA0C1C5846C4004B6BB2 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				5207F3B41C585AF500C86E8A /* _MGCPhoto.h */,
+				5207F3B51C585AF500C86E8A /* _MGCPhoto.m */,
+				5268DA0E1C58516F004B6BB2 /* _MGCNamedEntity.h */,
+				5268DA0F1C58516F004B6BB2 /* _MGCNamedEntity.m */,
+				5268DA101C58516F004B6BB2 /* _MGCNote.h */,
+				5268DA111C58516F004B6BB2 /* _MGCNote.m */,
+				5268DA121C58516F004B6BB2 /* _MGCNotebook.h */,
+				5268DA131C58516F004B6BB2 /* _MGCNotebook.m */,
+			);
+			name = Machine;
+			sourceTree = "<group>";
+		};
+		5268DA0D1C5846CF004B6BB2 /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				5207F3B71C585B0B00C86E8A /* MGCPhoto.h */,
+				5207F3B81C585B0B00C86E8A /* MGCPhoto.m */,
+				5268DA171C585188004B6BB2 /* MGCNamedEntity.h */,
+				5268DA181C585188004B6BB2 /* MGCNamedEntity.m */,
+				5268DA191C585188004B6BB2 /* MGCNote.h */,
+				5268DA1A1C585188004B6BB2 /* MGCNote.m */,
+				5268DA1B1C585188004B6BB2 /* MGCNotebook.h */,
+				5268DA1C1C585188004B6BB2 /* MGCNotebook.m */,
+			);
+			name = Human;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +271,6 @@
 			files = (
 				5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */,
 				5268D9DB1C582BFB004B6BB2 /* Assets.xcassets in Resources */,
-				5268D9D91C582BFB004B6BB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,9 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5268D9D61C582BFB004B6BB2 /* ViewController.m in Sources */,
+				5268DA1D1C585188004B6BB2 /* MGCNamedEntity.m in Sources */,
+				5268DA161C58516F004B6BB2 /* _MGCNotebook.m in Sources */,
+				5268DA151C58516F004B6BB2 /* _MGCNote.m in Sources */,
 				5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */,
+				5268DA1F1C585188004B6BB2 /* MGCNotebook.m in Sources */,
+				5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */,
+				5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */,
+				5268DA141C58516F004B6BB2 /* _MGCNamedEntity.m in Sources */,
 				5268D9F91C583045004B6BB2 /* Everpobre.xcdatamodeld in Sources */,
+				5268DA1E1C585188004B6BB2 /* MGCNote.m in Sources */,
 				5268D9F51C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m in Sources */,
 				5268D9D01C582BFB004B6BB2 /* main.m in Sources */,
 			);
@@ -256,14 +322,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5268D9D71C582BFB004B6BB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5268D9D81C582BFB004B6BB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5268D9DC1C582BFB004B6BB2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -420,6 +478,7 @@
 				5268D9EF1C582BFC004B6BB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5268D9F01C582BFC004B6BB2 /* Build configuration list for PBXNativeTarget "EverpobreAdvancedTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +487,7 @@
 				5268D9F21C582BFC004B6BB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

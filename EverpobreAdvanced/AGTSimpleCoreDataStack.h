@@ -28,6 +28,7 @@
 - (void)zapAllData;
 
 - (void)saveWithErrorBlock:(void(^)(NSError *error))errorBlock;
--(NSArray *)executeRequest:(NSFetchRequest *)request
+
+- (NSArray *)executeRequest:(NSFetchRequest *)request
                  withError:(void(^)(NSError *error))errorBlock;
 @end
