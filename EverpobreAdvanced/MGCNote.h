@@ -1,5 +1,9 @@
 #import "_MGCNote.h"
 
 @interface MGCNote : _MGCNote {}
-// Custom logic goes here.
+
++(instancetype) noteWithName:(NSString *) name
+                    notebook:(MGCNotebook *) notebook
+                     context:(NSManagedObjectContext *) context;
+
 @end

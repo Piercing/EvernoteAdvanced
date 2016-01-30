@@ -44,14 +44,5 @@ const struct MGCPhotoRelationships MGCPhotoRelationships = {
 
 @dynamic notes;
 
-- (NSMutableSet*)notesSet {
-	[self willAccessValueForKey:@"notes"];
-
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"notes"];
-
-	[self didAccessValueForKey:@"notes"];
-	return result;
-}
-
 @end
 

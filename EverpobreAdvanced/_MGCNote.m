@@ -4,9 +4,6 @@
 #import "_MGCNote.h"
 
 const struct MGCNoteAttributes MGCNoteAttributes = {
-	.creationDate = @"creationDate",
-	.modificationDate = @"modificationDate",
-	.name = @"name",
 	.text = @"text",
 };
 
@@ -43,12 +40,6 @@ const struct MGCNoteRelationships MGCNoteRelationships = {
 
 	return keyPaths;
 }
-
-@dynamic creationDate;
-
-@dynamic modificationDate;
-
-@dynamic name;
 
 @dynamic text;
 

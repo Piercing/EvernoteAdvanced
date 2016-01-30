@@ -3,12 +3,6 @@
 
 #import "_MGCNotebook.h"
 
-const struct MGCNotebookAttributes MGCNotebookAttributes = {
-	.creationDate = @"creationDate",
-	.modificationDate = @"modificationDate",
-	.name = @"name",
-};
-
 const struct MGCNotebookRelationships MGCNotebookRelationships = {
 	.notes = @"notes",
 };
@@ -41,12 +35,6 @@ const struct MGCNotebookRelationships MGCNotebookRelationships = {
 
 	return keyPaths;
 }
-
-@dynamic creationDate;
-
-@dynamic modificationDate;
-
-@dynamic name;
 
 @dynamic notes;
 

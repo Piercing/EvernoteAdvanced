@@ -2,11 +2,9 @@
 // Make changes to MGCNote.h instead.
 
 @import CoreData;
+#import "MGCNamedEntity.h"
 
 extern const struct MGCNoteAttributes {
-	__unsafe_unretained NSString *creationDate;
-	__unsafe_unretained NSString *modificationDate;
-	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *text;
 } MGCNoteAttributes;
 
@@ -18,26 +16,14 @@ extern const struct MGCNoteRelationships {
 @class MGCNotebook;
 @class MGCPhoto;
 
-@interface MGCNoteID : NSManagedObjectID {}
+@interface MGCNoteID : MGCNamedEntityID {}
 @end
 
-@interface _MGCNote : NSManagedObject {}
+@interface _MGCNote : MGCNamedEntity {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) MGCNoteID* objectID;
-
-@property (nonatomic, strong) NSDate* creationDate;
-
-//- (BOOL)validateCreationDate:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSDate* modificationDate;
-
-//- (BOOL)validateModificationDate:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* name;
-
-//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* text;
 
@@ -54,15 +40,6 @@ extern const struct MGCNoteRelationships {
 @end
 
 @interface _MGCNote (CoreDataGeneratedPrimitiveAccessors)
-
-- (NSDate*)primitiveCreationDate;
-- (void)setPrimitiveCreationDate:(NSDate*)value;
-
-- (NSDate*)primitiveModificationDate;
-- (void)setPrimitiveModificationDate:(NSDate*)value;
-
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
 
 - (NSString*)primitiveText;
 - (void)setPrimitiveText:(NSString*)value;

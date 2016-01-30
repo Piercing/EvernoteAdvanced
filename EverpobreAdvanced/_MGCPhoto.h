@@ -26,17 +26,9 @@ extern const struct MGCPhotoRelationships {
 
 //- (BOOL)validateImageData:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSSet *notes;
+@property (nonatomic, strong) MGCNote *notes;
 
-- (NSMutableSet*)notesSet;
-
-@end
-
-@interface _MGCPhoto (NotesCoreDataGeneratedAccessors)
-- (void)addNotes:(NSSet*)value_;
-- (void)removeNotes:(NSSet*)value_;
-- (void)addNotesObject:(MGCNote*)value_;
-- (void)removeNotesObject:(MGCNote*)value_;
+//- (BOOL)validateNotes:(id*)value_ error:(NSError**)error_;
 
 @end
 
@@ -45,7 +37,7 @@ extern const struct MGCPhotoRelationships {
 - (NSData*)primitiveImageData;
 - (void)setPrimitiveImageData:(NSData*)value;
 
-- (NSMutableSet*)primitiveNotes;
-- (void)setPrimitiveNotes:(NSMutableSet*)value;
+- (MGCNote*)primitiveNotes;
+- (void)setPrimitiveNotes:(MGCNote*)value;
 
 @end
