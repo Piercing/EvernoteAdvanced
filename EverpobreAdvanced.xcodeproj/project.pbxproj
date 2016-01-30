@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207F3B51C585AF500C86E8A /* _MGCPhoto.m */; };
 		5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207F3B81C585B0B00C86E8A /* MGCPhoto.m */; };
+		522814A51C59C761009D07F0 /* MGCCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814A41C59C761009D07F0 /* MGCCoreDataTableViewController.m */; };
+		522814A81C5AD9DF009D07F0 /* MGCNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814A71C5AD9DF009D07F0 /* MGCNotebooksViewController.m */; };
+		522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814AB1C5B149E009D07F0 /* UIViewController+Navigation.m */; };
+		522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522814AE1C5B1831009D07F0 /* MGCNotebookCellView.xib */; };
+		522814B21C5B1A71009D07F0 /* MGCNotebookCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */; };
 		5268D9D01C582BFB004B6BB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9CF1C582BFB004B6BB2 /* main.m */; };
 		5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9D21C582BFB004B6BB2 /* AppDelegate.m */; };
 		5268D9DB1C582BFB004B6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */; };
@@ -41,6 +46,15 @@
 		5207F3B81C585B0B00C86E8A /* MGCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCPhoto.m; sourceTree = "<group>"; };
 		5228149F1C59B7AF009D07F0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		522814A01C59B8C3009D07F0 /* EverpobreAdvanced.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverpobreAdvanced.pch; sourceTree = "<group>"; };
+		522814A31C59C761009D07F0 /* MGCCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCCoreDataTableViewController.h; sourceTree = "<group>"; };
+		522814A41C59C761009D07F0 /* MGCCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCCoreDataTableViewController.m; sourceTree = "<group>"; };
+		522814A61C5AD9DF009D07F0 /* MGCNotebooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebooksViewController.h; sourceTree = "<group>"; };
+		522814A71C5AD9DF009D07F0 /* MGCNotebooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebooksViewController.m; sourceTree = "<group>"; };
+		522814AA1C5B149E009D07F0 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		522814AB1C5B149E009D07F0 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		522814AE1C5B1831009D07F0 /* MGCNotebookCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGCNotebookCellView.xib; sourceTree = "<group>"; };
+		522814B01C5B1A71009D07F0 /* MGCNotebookCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebookCellView.h; sourceTree = "<group>"; };
+		522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebookCellView.m; sourceTree = "<group>"; };
 		5268D9CB1C582BFB004B6BB2 /* EverpobreAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverpobreAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5268D9CF1C582BFB004B6BB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5268D9D11C582BFB004B6BB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +108,37 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		522814A21C59C72B009D07F0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5268D9F31C582C1F004B6BB2 /* AGTSimpleCoreDataStack.h */,
+				522814A31C59C761009D07F0 /* MGCCoreDataTableViewController.h */,
+				522814A41C59C761009D07F0 /* MGCCoreDataTableViewController.m */,
+				522814A61C5AD9DF009D07F0 /* MGCNotebooksViewController.h */,
+				522814A71C5AD9DF009D07F0 /* MGCNotebooksViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		522814A91C5B13EF009D07F0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				522814AA1C5B149E009D07F0 /* UIViewController+Navigation.h */,
+				522814AB1C5B149E009D07F0 /* UIViewController+Navigation.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		522814AD1C5B1765009D07F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				522814AE1C5B1831009D07F0 /* MGCNotebookCellView.xib */,
+				522814B01C5B1A71009D07F0 /* MGCNotebookCellView.h */,
+				522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		5268D9C21C582BFB004B6BB2 = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				522814A11C59BF12009D07F0 /* Helpers */,
+				522814A91C5B13EF009D07F0 /* Categories */,
 				5268D9F61C582C2C004B6BB2 /* Models */,
+				522814A21C59C72B009D07F0 /* Controllers */,
+				522814AD1C5B1765009D07F0 /* Views */,
 				5268D9D11C582BFB004B6BB2 /* AppDelegate.h */,
 				5268D9D21C582BFB004B6BB2 /* AppDelegate.m */,
 				5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */,
@@ -150,7 +198,6 @@
 			children = (
 				5268DA0C1C5846C4004B6BB2 /* Machine */,
 				5268DA0D1C5846CF004B6BB2 /* Human */,
-				5268D9F31C582C1F004B6BB2 /* AGTSimpleCoreDataStack.h */,
 				5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */,
 				5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */,
 			);
@@ -269,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */,
 				5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */,
 				5268D9DB1C582BFB004B6BB2 /* Assets.xcassets in Resources */,
 			);
@@ -288,14 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522814A51C59C761009D07F0 /* MGCCoreDataTableViewController.m in Sources */,
 				5268DA1D1C585188004B6BB2 /* MGCNamedEntity.m in Sources */,
 				5268DA161C58516F004B6BB2 /* _MGCNotebook.m in Sources */,
+				522814B21C5B1A71009D07F0 /* MGCNotebookCellView.m in Sources */,
 				5268DA151C58516F004B6BB2 /* _MGCNote.m in Sources */,
 				5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */,
 				5268DA1F1C585188004B6BB2 /* MGCNotebook.m in Sources */,
+				522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */,
 				5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */,
 				5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */,
 				5268DA141C58516F004B6BB2 /* _MGCNamedEntity.m in Sources */,
+				522814A81C5AD9DF009D07F0 /* MGCNotebooksViewController.m in Sources */,
 				5268D9F91C583045004B6BB2 /* Everpobre.xcdatamodeld in Sources */,
 				5268DA1E1C585188004B6BB2 /* MGCNote.m in Sources */,
 				5268D9F51C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m in Sources */,

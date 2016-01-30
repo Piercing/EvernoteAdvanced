@@ -33,10 +33,11 @@
 - (NSManagedObjectContext *)context
 {
     if (_context == nil) {
-        // Ahora hay que indicarle a que cola va asociado al iniciar el
-        // contexto, que por defecto es a la cola principal, en este curso.
         _context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         _context.persistentStoreCoordinator = self.storeCoordinator;
+        
+        // Añado un UndoManager
+        _context.undoManager = [[NSUndoManager alloc]init];
     }
     
     return _context;
@@ -200,7 +201,7 @@
             errorBlock(err);
         }
     }
-
+    
     return results;
 }
 @end
