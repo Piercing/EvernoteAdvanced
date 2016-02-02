@@ -22,10 +22,15 @@
     // Crear una instancia del stack de Core Data
     self.model = [AGTSimpleCoreDataStack coreDataStackWithModelName:@"Everpobre"];
     
-    [self trastearConDatos];
+    if(ADD_DUMMY_DATA){
+        [self trastearConDatos];
+        [self predicatesNotebooks];
+    }
+    
     
     // Auto guardado
     [self autoSave];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Necesito el 'fetchedResultsController', pero para ello necesito primero un 'fechedRequest' => consulta
@@ -93,7 +98,11 @@
 
 
 #pragma mark - Utils
--(void) trastearConDatos{
+-(void) addDummyData{
+    
+    // Antes de añadir datos destruyo lo que hay en la BBDD
+    // así siempre tengo la misma cantidad de datos en el BBDD.
+    [self.model zapAllData];
     
     // Creo una libreta y le paso dos notas
     MGCNotebook *novias = [MGCNotebook notebookWithName:@"Ex-novias para el recuerdo de hace unos años"
@@ -104,13 +113,43 @@
                  notebook:novias
                   context:self.model.context];
     
-    MGCNote *pampita = [MGCNote noteWithName:@"Pampita"
+    [MGCNote noteWithName:@"Marina Dávalos"
+                 notebook:novias
+                  context:self.model.context];
+    
+    [MGCNote noteWithName:@"Pampita"
                                     notebook:novias
                                      context:self.model.context];
     
     
-    // No hace falta guardar primero para poder buscar un objeto,
-    // por tanto ya podemos buscar aquí aunque guarde más abajo.
+    // Creo una libreta y le paso dos notas
+    MGCNotebook *lugares = [MGCNotebook notebookWithName:@"Lugares muy extraños, cosas 'mu' chungas pedadorrrr"
+                                                context:self.model.context];
+    
+    // Creo Notas
+    [MGCNote noteWithName:@"Tirando pal monte, casi me pilla una cabra"
+                 notebook:lugares
+                  context:self.model.context];
+    
+    [MGCNote noteWithName:@"Bajando del monte tres cuartos de lo mismo"
+                 notebook:lugares
+                  context:self.model.context];
+    
+    [MGCNote noteWithName:@"Ya no fui más pal monte, a las malas prefiero a Yoda"
+                 notebook:lugares
+                  context:self.model.context];
+    
+    // Guardo
+    [self save];
+    
+}
+
+-(void)trastearConDatos{
+    
+    // Añadir
+    [self addDummyData];
+    
+    // Buscando datos
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[MGCNote entityName]];
     
     // Ordeno los resultados con 'sortDescriptors' que acepta un array de
@@ -119,9 +158,9 @@
     // que lo haga en orden ascendente o en orden ascendente. Como es un
     // array podemos poner tantos criterios como a mi me de la gana JARRLL.
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:MGCNamedEntityAttributes.name
-                                                          ascending:YES],
-                            [NSSortDescriptor sortDescriptorWithKey:MGCNamedEntityAttributes.modificationDate
-                                                          ascending:NO]];
+                                                              ascending:YES],
+                                [NSSortDescriptor sortDescriptorWithKey:MGCNamedEntityAttributes.modificationDate
+                                                              ascending:NO]];
     
     // NOTA: mejor que esto lo haga Core Data
     // Le decimos el límite de notas que queremos
@@ -142,13 +181,10 @@
     }
     
     // Elimino
-    [self.model.context deleteObject:pampita];
+    //[self.model.context deleteObject:pampita];
     
-    // Guardo
-    [self save];
     
 }
-
 
 -(void)save{
     
@@ -166,13 +202,45 @@
         // Guardo
         [self save];
         
-        // Se ejecuta el código pasado 'AUTO_SAVE_DELAY_IN_SECONDS'
-        // Llamada recursiva con retraso
+        // Se ejecuta el código pasado => 'AUTO_SAVE_DELAY_IN_SECONDS'
+        // Llamada recursiva con retraso.
         [self performSelector:@selector(autoSave)
                    withObject:nil
                    afterDelay:AUTO_SAVE_DELAY_IN_SECONDS];
     }
 }
+
+
+#pragma mark - Predicate
+
+-(void) predicatesNotebooks{
+    
+    NSPredicate *novias = [NSPredicate predicateWithFormat:@"notebook.name ==[cd] 'Ex-novias para el recuerdo'"];
+    
+    // Creo el Fetch request
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[MGCNote entityName]];
+    
+    // Creo un array para los resultados
+    NSArray *results = nil;
+    
+    // Selecciono las ex-novias
+    request.predicate = novias;
+    results = [self.model executeRequest:request withError:^(NSError *error) {
+        NSLog(@"Error buscando %@", request);
+    }];
+    
+    // Muestro los objetos de la búsqueda
+    NSLog(@"Results: \n %@", results);
+    
+}
+
+
+
+
+
+
+
+
 
 
 @end

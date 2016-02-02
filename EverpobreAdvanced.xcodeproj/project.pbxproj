@@ -111,7 +111,6 @@
 		522814A21C59C72B009D07F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5268D9F31C582C1F004B6BB2 /* AGTSimpleCoreDataStack.h */,
 				522814A31C59C761009D07F0 /* MGCCoreDataTableViewController.h */,
 				522814A41C59C761009D07F0 /* MGCCoreDataTableViewController.m */,
 				522814A61C5AD9DF009D07F0 /* MGCNotebooksViewController.h */,
@@ -198,7 +197,6 @@
 			children = (
 				5268DA0C1C5846C4004B6BB2 /* Machine */,
 				5268DA0D1C5846CF004B6BB2 /* Human */,
-				5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */,
 				5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */,
 			);
 			name = Models;
@@ -222,14 +220,16 @@
 		5268DA0D1C5846CF004B6BB2 /* Human */ = {
 			isa = PBXGroup;
 			children = (
-				5207F3B71C585B0B00C86E8A /* MGCPhoto.h */,
-				5207F3B81C585B0B00C86E8A /* MGCPhoto.m */,
 				5268DA171C585188004B6BB2 /* MGCNamedEntity.h */,
 				5268DA181C585188004B6BB2 /* MGCNamedEntity.m */,
 				5268DA191C585188004B6BB2 /* MGCNote.h */,
 				5268DA1A1C585188004B6BB2 /* MGCNote.m */,
 				5268DA1B1C585188004B6BB2 /* MGCNotebook.h */,
 				5268DA1C1C585188004B6BB2 /* MGCNotebook.m */,
+				5207F3B71C585B0B00C86E8A /* MGCPhoto.h */,
+				5207F3B81C585B0B00C86E8A /* MGCPhoto.m */,
+				5268D9F31C582C1F004B6BB2 /* AGTSimpleCoreDataStack.h */,
+				5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */,
 			);
 			name = Human;
 			sourceTree = "<group>";
