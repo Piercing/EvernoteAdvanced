@@ -27,6 +27,7 @@
 		5268DA1D1C585188004B6BB2 /* MGCNamedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA181C585188004B6BB2 /* MGCNamedEntity.m */; };
 		5268DA1E1C585188004B6BB2 /* MGCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA1A1C585188004B6BB2 /* MGCNote.m */; };
 		5268DA1F1C585188004B6BB2 /* MGCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA1C1C585188004B6BB2 /* MGCNotebook.m */; };
+		52C53B9B1C61837900D1BFDF /* MGCNotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C53B9A1C61837900D1BFDF /* MGCNotesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		5268DA1A1C585188004B6BB2 /* MGCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNote.m; sourceTree = "<group>"; };
 		5268DA1B1C585188004B6BB2 /* MGCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebook.h; sourceTree = "<group>"; };
 		5268DA1C1C585188004B6BB2 /* MGCNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebook.m; sourceTree = "<group>"; };
+		52C53B991C61837900D1BFDF /* MGCNotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotesTableViewController.h; sourceTree = "<group>"; };
+		52C53B9A1C61837900D1BFDF /* MGCNotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				522814A41C59C761009D07F0 /* MGCCoreDataTableViewController.m */,
 				522814A61C5AD9DF009D07F0 /* MGCNotebooksViewController.h */,
 				522814A71C5AD9DF009D07F0 /* MGCNotebooksViewController.m */,
+				52C53B991C61837900D1BFDF /* MGCNotesTableViewController.h */,
+				52C53B9A1C61837900D1BFDF /* MGCNotesTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				5268DA151C58516F004B6BB2 /* _MGCNote.m in Sources */,
 				5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */,
 				5268DA1F1C585188004B6BB2 /* MGCNotebook.m in Sources */,
+				52C53B9B1C61837900D1BFDF /* MGCNotesTableViewController.m in Sources */,
 				522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */,
 				5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */,
 				5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */,

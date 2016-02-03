@@ -9,6 +9,7 @@
 #import "MGCNotebooksViewController.h"
 #import "MGCNotebook.h"
 #import "MGCNotebookCellView.h"
+#import "MGCNotesTableViewController.h"
 
 @interface MGCNotebooksViewController ()
 
@@ -137,20 +138,49 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
     return [MGCNotebookCellView cellHeight];
 }
 
+// Implemento el método 'didSelectRowAtIndexPath' para mostrar las notas
+// en una nueva tabla, cuando el usuario ha seleccionado alguna libreta.
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // Guardo la libreta seleccionada en la tabla.
+    MGCNotebook *nb = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    // Creo una instancia del controlador 'MGCNotebook' y le paso la libreta seleccionada.
+    MGCNotesTableViewController *notesVC = [[MGCNotesTableViewController alloc] initWithNotebook:nb];
+    
+    // Hago un push al controlador para que muestre las notas de esa libreta en una nueva tabla.
+    [self.navigationController pushViewController:notesVC
+                                         animated:YES];
+}
+
 
 #pragma mark - Proximity Sensor
+-(void)setupProximitySensor{
+    
+    UIDevice *dev = [UIDevice currentDevice];
+    
+    if ([self hasProximitySensor]) {
+        [dev setProximityMonitoringEnabled:YES];
+        
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        
+        [center addObserver:self
+                   selector:@selector(proximityStateDidChanges:)
+                       name:UIDeviceProximityStateDidChangeNotification
+                     object:nil];
+    }
+}
+
 // Detectar si hay o no un detector de proximidad
 -(BOOL)hasProximitySensor{
     
-    UIDevice *device = [UIDevice currentDevice];
-    BOOL oldValue = [device isProximityMonitoringEnabled];
-    [device setProximityMonitoringEnabled:!oldValue];
-    BOOL newValue = [device isProximityMonitoringEnabled];
+    UIDevice *dev =[UIDevice currentDevice];
+    BOOL oldValue = [dev isProximityMonitoringEnabled];
+    [dev setProximityMonitoringEnabled:!oldValue];
+    BOOL newValue = [dev isProximityMonitoringEnabled];
     
-    [device setProximityMonitoringEnabled:oldValue];
+    [dev setProximityMonitoringEnabled:oldValue];
     
     return (oldValue != newValue);
-    
 }
 // UIDeviceBatteryLevelDidChangeNotification
 -(void)proximityStateDidChanges:(NSNotification *)notification{

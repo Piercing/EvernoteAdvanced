@@ -215,13 +215,15 @@
 
 -(void) predicatesNotebooks{
     
+    // Predicado para todas las novias de la libreta ex-novias.
     NSPredicate *novias = [NSPredicate predicateWithFormat:@"notebook.name == 'Ex-novias para el recuerdo de hace unos años'"];
     
-    // Predicate sólo para las Dávalos
+    // Predicate compuesto sólo para las Dávalos
     NSPredicate *davalos =  [NSCompoundPredicate andPredicateWithSubpredicates:@[novias,
                                                                                  [NSPredicate predicateWithFormat:@"name ENDSWITH[cd] 'davalos' "]]];
-    
-    NSPredicate *pampita = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] 'pampita'"];
+    // Predicate compuesto sólo para Pampita
+    NSPredicate *pampita = [NSCompoundPredicate andPredicateWithSubpredicates:@[novias,
+                                                                                [NSPredicate predicateWithFormat:@"name CONTAINS[cd] 'pampita'"]]];
     
     // Creo el Fetch request
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[MGCNote entityName]];
@@ -245,16 +247,16 @@
                                withError:^(NSError *error) {
                                    NSLog(@"Error buscando a las chiquillas %@, cachis en la mar...", davalos);
                                    
-    }];
+                               }];
     
     NSLog(@"Dávalos:\n %@", results);
     
     // Pampita
     request.predicate = pampita;
     results = [self.model executeRequest:request
-                           withError:^(NSError *error) {
-                               NSLog(@"Error al buscar %@", request);
-                           }];
+                               withError:^(NSError *error) {
+                                   NSLog(@"Error al buscar %@", request);
+                               }];
     
     NSLog(@"Pampita:\n %@", results);
     
