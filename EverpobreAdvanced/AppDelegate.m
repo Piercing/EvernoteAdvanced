@@ -52,7 +52,7 @@
     MGCNotebooksViewController *nbVC = [[MGCNotebooksViewController alloc]
                                         initWithFetchedResultsController:results
                                         style:UITableViewStylePlain];
-   
+    
     
     // Lo pongo como 'rootViewController' de nuestra 'windows'
     // pasándole la categoría 'wrappedInNavigation' empaquetada.
@@ -93,7 +93,7 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
-     NSLog(@"¿Y quieres que guarde aquí? va a ser que no!!!");
+    NSLog(@"¿Y quieres que guarde aquí? va a ser que no!!!");
 }
 
 
@@ -118,13 +118,13 @@
                   context:self.model.context];
     
     [MGCNote noteWithName:@"Pampita"
-                                    notebook:novias
-                                     context:self.model.context];
+                 notebook:novias
+                  context:self.model.context];
     
     
     // Creo una libreta y le paso dos notas
     MGCNotebook *lugares = [MGCNotebook notebookWithName:@"Lugares muy extraños, cosas 'mu' chungas pedadorrrr"
-                                                context:self.model.context];
+                                                 context:self.model.context];
     
     // Creo Notas
     [MGCNote noteWithName:@"Tirando pal monte, casi me pilla una cabra"
@@ -215,7 +215,13 @@
 
 -(void) predicatesNotebooks{
     
-    NSPredicate *novias = [NSPredicate predicateWithFormat:@"notebook.name ==[cd] 'Ex-novias para el recuerdo'"];
+    NSPredicate *novias = [NSPredicate predicateWithFormat:@"notebook.name == 'Ex-novias para el recuerdo de hace unos años'"];
+    
+    // Predicate sólo para las Dávalos
+    NSPredicate *davalos =  [NSCompoundPredicate andPredicateWithSubpredicates:@[novias,
+                                                                                 [NSPredicate predicateWithFormat:@"name ENDSWITH[cd] 'davalos' "]]];
+    
+    NSPredicate *pampita = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] 'pampita'"];
     
     // Creo el Fetch request
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[MGCNote entityName]];
@@ -225,12 +231,33 @@
     
     // Selecciono las ex-novias
     request.predicate = novias;
-    results = [self.model executeRequest:request withError:^(NSError *error) {
-        NSLog(@"Error buscando %@", request);
-    }];
+    results = [self.model executeRequest:request
+                               withError:^(NSError *error) {
+                                   NSLog(@"Error buscando %@", request);
+                               }];
     
     // Muestro los objetos de la búsqueda
-    NSLog(@"Results: \n %@", results);
+    NSLog(@"Novias: \n %@", results);
+    
+    // Mostar sólo las Dávalos, para ello creo el predicate 'davalos' antes
+    request.predicate = davalos;
+    results = [self.model executeRequest:request
+                               withError:^(NSError *error) {
+                                   NSLog(@"Error buscando a las chiquillas %@, cachis en la mar...", davalos);
+                                   
+    }];
+    
+    NSLog(@"Dávalos:\n %@", results);
+    
+    // Pampita
+    request.predicate = pampita;
+    results = [self.model executeRequest:request
+                           withError:^(NSError *error) {
+                               NSLog(@"Error al buscar %@", request);
+                           }];
+    
+    NSLog(@"Pampita:\n %@", results);
+    
     
 }
 
