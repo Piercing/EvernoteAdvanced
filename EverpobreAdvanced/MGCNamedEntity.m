@@ -25,7 +25,7 @@
     
     // array con el nombre de las propiedades a observar => 'observableKeyNames'
     
-    // Recorro el array con las distintas propiedades, excepto 'modificationDate'
+    // Recorro el array con las distintas propiedades, excepto 'UILUImodificationDate'
     // ya que esta se modificará cuando las demás propiedades cambien, por tanto,
     // doy de alta en Notificaciones a 'modificationDate' para que esté al loro
     // de el cambio de resto de propiedades. Yo mismo, 'notificationDate', las observo
@@ -77,15 +77,15 @@
 // La primera vez lo rebirá al hacer el 'inserInto...'
 -(void)awakeFromInsert{
     
-    // reenvio a nuestro padre => 'Super', OJO!!! no enviarlo al limbo.
+    // reenvio a nuestro padre que está en los cielos => 'Super', OJO!!! no enviarlo al limbo.
     [super awakeFromInsert];
     // Montamos el chiringuito de Pepe aquí, Pepe = KVO, me doy de alta.
     [self setupKVO];
 }
 
-// Este lo recibirá 'NSManagedObject' un porrón de veces a lo largo
-// de su vida, siempre y cuando sea creado debido a una búsqueda. Si
-// busco algo, recibe 'awakeFromFetch'.
+// Este lo recibirá 'NSManagedObject' un porrón (como el del vino)
+// de veces a lo largo de su vida, siempre y cuando sea creado debido
+// a una búsqueda. Si busco algo, recibe 'awakeFromFetch'.
 // NOTA: se envía también cuando el objeto vuelve del estado de 'fault'
 -(void)awakeFromFetch{
     
@@ -96,7 +96,7 @@
 }
 
 // Método que nos avisa cuando el objeto se convierte en un 'fault'.
-// Te 'via' convertir en un fistro de 'fault' => 'willTurnIntoFault'
+// Te 'viá' convertir en un fistro de 'fault' => 'willTurnIntoFault'
 -(void)willTurnIntoFault{
     
     // reenvío a super
