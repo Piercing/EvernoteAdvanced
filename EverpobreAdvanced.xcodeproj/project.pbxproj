@@ -11,6 +11,8 @@
 		5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207F3B81C585B0B00C86E8A /* MGCPhoto.m */; };
 		522139BC1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522139BB1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib */; };
 		522139BF1C6554B00047BB9C /* MGCNoteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139BE1C6554B00047BB9C /* MGCNoteCellView.m */; };
+		522139C51C6557750047BB9C /* MGCCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139C41C6557750047BB9C /* MGCCoreDataCollectionViewController.m */; };
+		522139C81C6558080047BB9C /* MGCNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139C71C6558080047BB9C /* MGCNotesViewController.m */; };
 		522814A51C59C761009D07F0 /* MGCCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814A41C59C761009D07F0 /* MGCCoreDataTableViewController.m */; };
 		522814A81C5AD9DF009D07F0 /* MGCNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814A71C5AD9DF009D07F0 /* MGCNotebooksViewController.m */; };
 		522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814AB1C5B149E009D07F0 /* UIViewController+Navigation.m */; };
@@ -50,6 +52,10 @@
 		522139BB1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGCNoteCollectionViewCell.xib; sourceTree = "<group>"; };
 		522139BD1C6554B00047BB9C /* MGCNoteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNoteCellView.h; sourceTree = "<group>"; };
 		522139BE1C6554B00047BB9C /* MGCNoteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNoteCellView.m; sourceTree = "<group>"; };
+		522139C31C6557750047BB9C /* MGCCoreDataCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCCoreDataCollectionViewController.h; sourceTree = "<group>"; };
+		522139C41C6557750047BB9C /* MGCCoreDataCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCCoreDataCollectionViewController.m; sourceTree = "<group>"; };
+		522139C61C6558080047BB9C /* MGCNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotesViewController.h; sourceTree = "<group>"; };
+		522139C71C6558080047BB9C /* MGCNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotesViewController.m; sourceTree = "<group>"; };
 		5228149F1C59B7AF009D07F0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		522814A01C59B8C3009D07F0 /* EverpobreAdvanced.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverpobreAdvanced.pch; sourceTree = "<group>"; };
 		522814A31C59C761009D07F0 /* MGCCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCCoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -119,12 +125,16 @@
 		522814A21C59C72B009D07F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				522139C31C6557750047BB9C /* MGCCoreDataCollectionViewController.h */,
+				522139C41C6557750047BB9C /* MGCCoreDataCollectionViewController.m */,
 				522814A31C59C761009D07F0 /* MGCCoreDataTableViewController.h */,
 				522814A41C59C761009D07F0 /* MGCCoreDataTableViewController.m */,
 				522814A61C5AD9DF009D07F0 /* MGCNotebooksViewController.h */,
 				522814A71C5AD9DF009D07F0 /* MGCNotebooksViewController.m */,
 				52C53B991C61837900D1BFDF /* MGCNotesTableViewController.h */,
 				52C53B9A1C61837900D1BFDF /* MGCNotesTableViewController.m */,
+				522139C61C6558080047BB9C /* MGCNotesViewController.h */,
+				522139C71C6558080047BB9C /* MGCNotesViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -356,12 +366,14 @@
 				522814B21C5B1A71009D07F0 /* MGCNotebookCellView.m in Sources */,
 				522139BF1C6554B00047BB9C /* MGCNoteCellView.m in Sources */,
 				5268DA151C58516F004B6BB2 /* _MGCNote.m in Sources */,
+				522139C81C6558080047BB9C /* MGCNotesViewController.m in Sources */,
 				5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */,
 				5268DA1F1C585188004B6BB2 /* MGCNotebook.m in Sources */,
 				52C53B9B1C61837900D1BFDF /* MGCNotesTableViewController.m in Sources */,
 				522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */,
 				5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */,
 				5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */,
+				522139C51C6557750047BB9C /* MGCCoreDataCollectionViewController.m in Sources */,
 				5268DA141C58516F004B6BB2 /* _MGCNamedEntity.m in Sources */,
 				522814A81C5AD9DF009D07F0 /* MGCNotebooksViewController.m in Sources */,
 				5268D9F91C583045004B6BB2 /* Everpobre.xcdatamodeld in Sources */,

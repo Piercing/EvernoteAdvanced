@@ -10,6 +10,8 @@
 #import "MGCNotebook.h"
 #import "MGCNotebookCellView.h"
 #import "MGCNotesTableViewController.h"
+#import "MGCNote.h"
+#import "MGCNotesViewController.h"
 
 @interface MGCNotebooksViewController ()
 
@@ -139,17 +141,37 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 // Implemento el método 'didSelectRowAtIndexPath' para mostrar las notas
-// en una nueva tabla, cuando el usuario ha seleccionado alguna libreta.
+// en una nueva collectionView, cuando el usuario ha seleccionado alguna libreta.
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    // Guardo la libreta seleccionada en la tabla.
-    MGCNotebook *nb = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    // Creo una instancia del controlador 'MGCNotebook' y le paso la libreta seleccionada.
-    MGCNotesTableViewController *notesVC = [[MGCNotesTableViewController alloc] initWithNotebook:nb];
+    // Creo fetch request.
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[MGCNote entityName]];
+    // Lo ordeno, por nombre, fecha de creación y modificación.
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:MGCNamedEntityAttributes.name
+                                                              ascending:YES],
+                                [NSSortDescriptor sortDescriptorWithKey:MGCNamedEntityAttributes.modificationDate
+                                                              ascending:NO],
+                                [NSSortDescriptor sortDescriptorWithKey:MGCNamedEntityAttributes.creationDate
+                                                              ascending:NO]];
     
-    // Hago un push al controlador para que muestre las notas de esa libreta en una nueva tabla.
+    // Crear le fetched Results Controller
+    NSFetchedResultsController *nsFRC = [[NSFetchedResultsController alloc]initWithFetchRequest:request
+                                                                           managedObjectContext:self.fetchedResultsController.managedObjectContext
+                                                                             sectionNameKeyPath:nil cacheName:nil];
+    
+    // Creo el layout
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    layout.itemSize = CGSizeMake(120, 150);
+    
+    // Crear el controlador de notas
+    MGCNotesViewController *notesVC = [MGCNotesViewController coreDataCollectionViewControllerWithFetchedResultsController:nsFRC
+                                                                                                                    layout:layout];
+    
+    // Lo pusheo
     [self.navigationController pushViewController:notesVC
                                          animated:YES];
+    
+    
 }
 
 
