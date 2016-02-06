@@ -27,6 +27,11 @@ static NSString *cellId = @"NoteCellId";
     
     // Llamo al Nib
     [self registerNib];
+    // Asigno color a la celda (Xib)
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.85
+                                                            alpha:1];
+    self.title = @"Notas";
+    
 }
 
 #pragma mark - Xib registration
@@ -55,12 +60,8 @@ static NSString *cellId = @"NoteCellId";
     MGCNoteCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId
                                                                       forIndexPath:indexPath];
     
-    // Configurara la celda, sincronizar modelo => vista (nota => celda)
-    cell.titleView.text = note.name;
-    cell.photoView.image = note.photo.image;
-    NSDateFormatter *nsFmt = [NSDateFormatter new];
-    nsFmt.dateStyle = NSDateIntervalFormatterMediumStyle;
-    cell.modificationDateView.text = [nsFmt stringFromDate:note.modificationDate];
+    // La propia vista se encarga de obsrvar la nota y reflejar los cambios
+    [cell observeNote:note];
     
     // Devolver la celda
     return cell;

@@ -154,6 +154,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
                                 [NSSortDescriptor sortDescriptorWithKey:MGCNamedEntityAttributes.creationDate
                                                               ascending:NO]];
     
+    // Añado predicados para filtrar las notas a mostrar
+    // 'notebook' tiene que ser igual a la libreta sobre la que hemos tocado.
+    // Esto lo podemos saber mediante el 'indexpath'
+    request.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", [self.fetchedResultsController objectAtIndexPath:indexPath]];
+    
     // Crear le fetched Results Controller
     NSFetchedResultsController *nsFRC = [[NSFetchedResultsController alloc]initWithFetchRequest:request
                                                                            managedObjectContext:self.fetchedResultsController.managedObjectContext
@@ -161,7 +166,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     // Creo el layout
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.itemSize = CGSizeMake(120, 150);
+    layout.itemSize = CGSizeMake(192, 150);
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 10;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     // Crear el controlador de notas
     MGCNotesViewController *notesVC = [MGCNotesViewController coreDataCollectionViewControllerWithFetchedResultsController:nsFRC
