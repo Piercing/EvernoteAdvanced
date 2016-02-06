@@ -51,6 +51,9 @@
     // Observando el teclado cuando va a aparecer
     [self starObservingKeyBoard];
     
+    // Llamo al accessoryView para que meta la barra de botones (DONE).
+    [self setupInputAccessoryView];
+    
 }
 
 // La vuelta, a la toritilla Umm rica rica!!!
@@ -165,6 +168,30 @@
     
 }
 
+// Creo la accesoryView, una barra de botones
+// ==>teclado con una barra de botones encima
+-(void) setupInputAccessoryView{
+    
+    // Creo una barra
+    UIToolbar *bar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    
+    // Añado botones == 'DONE' (listo)
+    UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                         target:self
+                                                                         action:@selector(dismissKeyboard:)];
+    
+    // Creo un array con los botones que quiero meter en la barra.
+    [bar setItems:@[done]];
+    
+    // La asigno como 'accessoryInputView'
+    self.textView.inputAccessoryView = bar;
+    
+}
+
+-(void)dismissKeyboard: (id)sender{
+    [self.view endEditing:YES];
+    
+}
 
 #pragma mark - Memory Warning
 - (void)didReceiveMemoryWarning {
