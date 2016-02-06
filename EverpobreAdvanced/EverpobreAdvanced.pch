@@ -16,9 +16,9 @@
 #import <availability.h>
 
 #ifdef __OBJC__
-#import <uikit uikit.h="">
-#import <foundation foundation.h="">
-#import "Settings.h"
-
+    #import <uikit uikit.h="">
+    #import <foundation foundation.h="">
+    #import "Settings.h"
+    #import <MapKit/Mapkit.h>
 #endif
 

@@ -10,7 +10,7 @@
 #import "MGCNote.h"
 #import "MGCNoteCellView.h"
 #import "MGCPhoto.h"
-
+#import "MGCNoteViewController.h"
 // Constante para el identificador de la
 // celda y posteriormente poder registrarla.
 static NSString *cellId = @"NoteCellId";
@@ -65,6 +65,21 @@ static NSString *cellId = @"NoteCellId";
     
     // Devolver la celda
     return cell;
+}
+
+#pragma mark - Delegate
+-(void) collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // Obtengo el objeto => nota, a través del fetched Results Controller
+    MGCNote *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    // Crear el controlador
+    MGCNoteViewController *noteVC = [[MGCNoteViewController alloc]initWithModel:note];
+    
+    // Hacer un push
+    [self.navigationController pushViewController:noteVC
+                                         animated:YES];
 }
 
 

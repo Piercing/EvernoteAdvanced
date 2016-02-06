@@ -17,6 +17,9 @@
 		522139CD1C656B920047BB9C /* photography76.png in Resources */ = {isa = PBXBuildFile; fileRef = 522139CC1C656B920047BB9C /* photography76.png */; };
 		522139CF1C656D0A0047BB9C /* No-image-available-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 522139CE1C656D0A0047BB9C /* No-image-available-hi.png */; };
 		522139D11C656D1F0047BB9C /* City-No-Camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 522139D01C656D1F0047BB9C /* City-No-Camera-icon.png */; };
+		522139D51C658D270047BB9C /* MGCNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139D31C658D270047BB9C /* MGCNoteViewController.m */; };
+		522139D61C658D270047BB9C /* MGCNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522139D41C658D270047BB9C /* MGCNoteViewController.xib */; };
+		522139D81C6591140047BB9C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522139D71C6591140047BB9C /* MapKit.framework */; };
 		522814A51C59C761009D07F0 /* MGCCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814A41C59C761009D07F0 /* MGCCoreDataTableViewController.m */; };
 		522814A81C5AD9DF009D07F0 /* MGCNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814A71C5AD9DF009D07F0 /* MGCNotebooksViewController.m */; };
 		522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814AB1C5B149E009D07F0 /* UIViewController+Navigation.m */; };
@@ -64,6 +67,10 @@
 		522139CC1C656B920047BB9C /* photography76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photography76.png; sourceTree = "<group>"; };
 		522139CE1C656D0A0047BB9C /* No-image-available-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No-image-available-hi.png"; sourceTree = "<group>"; };
 		522139D01C656D1F0047BB9C /* City-No-Camera-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "City-No-Camera-icon.png"; sourceTree = "<group>"; };
+		522139D21C658D270047BB9C /* MGCNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNoteViewController.h; sourceTree = "<group>"; };
+		522139D31C658D270047BB9C /* MGCNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNoteViewController.m; sourceTree = "<group>"; };
+		522139D41C658D270047BB9C /* MGCNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGCNoteViewController.xib; sourceTree = "<group>"; };
+		522139D71C6591140047BB9C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5228149F1C59B7AF009D07F0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		522814A01C59B8C3009D07F0 /* EverpobreAdvanced.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverpobreAdvanced.pch; sourceTree = "<group>"; };
 		522814A31C59C761009D07F0 /* MGCCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCCoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -109,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522139D81C6591140047BB9C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +162,9 @@
 				52C53B9A1C61837900D1BFDF /* MGCNotesTableViewController.m */,
 				522139C61C6558080047BB9C /* MGCNotesViewController.h */,
 				522139C71C6558080047BB9C /* MGCNotesViewController.m */,
+				522139D21C658D270047BB9C /* MGCNoteViewController.h */,
+				522139D31C658D270047BB9C /* MGCNoteViewController.m */,
+				522139D41C658D270047BB9C /* MGCNoteViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 		5268D9C21C582BFB004B6BB2 = {
 			isa = PBXGroup;
 			children = (
+				522139D71C6591140047BB9C /* MapKit.framework */,
 				5268D9CD1C582BFB004B6BB2 /* EverpobreAdvanced */,
 				5268D9E71C582BFC004B6BB2 /* EverpobreAdvancedTests */,
 				5268D9CC1C582BFB004B6BB2 /* Products */,
@@ -364,6 +376,7 @@
 				522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */,
 				5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */,
 				522139CD1C656B920047BB9C /* photography76.png in Resources */,
+				522139D61C658D270047BB9C /* MGCNoteViewController.xib in Resources */,
 				522139CB1C65657F0047BB9C /* noImage.png in Resources */,
 				522139BC1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib in Resources */,
 				5268D9DB1C582BFB004B6BB2 /* Assets.xcassets in Resources */,
@@ -389,6 +402,7 @@
 				5268DA161C58516F004B6BB2 /* _MGCNotebook.m in Sources */,
 				522814B21C5B1A71009D07F0 /* MGCNotebookCellView.m in Sources */,
 				522139BF1C6554B00047BB9C /* MGCNoteCellView.m in Sources */,
+				522139D51C658D270047BB9C /* MGCNoteViewController.m in Sources */,
 				5268DA151C58516F004B6BB2 /* _MGCNote.m in Sources */,
 				522139C81C6558080047BB9C /* MGCNotesViewController.m in Sources */,
 				5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */,

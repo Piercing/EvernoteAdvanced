@@ -121,9 +121,17 @@
                  notebook:novias
                   context:self.model.context];
     
+    [MGCNote noteWithName:@"Pompita"
+                 notebook:novias
+                  context:self.model.context];
+    
+    [MGCNote noteWithName:@"La de la fusta"
+                 notebook:novias
+                  context:self.model.context];
+    
     
     // Creo una libreta y le paso dos notas
-    MGCNotebook *lugares = [MGCNotebook notebookWithName:@"Lugares muy extraños, cosas 'mu' chungas pedadorrrr"
+    MGCNotebook *lugares = [MGCNotebook notebookWithName:@"Lugares muy extraños, cosas 'mu' chungas pedadorrrr!!"
                                                  context:self.model.context];
     
     // Creo Notas
@@ -131,11 +139,15 @@
                  notebook:lugares
                   context:self.model.context];
     
-    [MGCNote noteWithName:@"Bajando del monte tres cuartos de lo mismo"
+    [MGCNote noteWithName:@"Bajando del monte tres cuartos de lo mismo, 'mardita' cabra :-("
                  notebook:lugares
                   context:self.model.context];
     
-    [MGCNote noteWithName:@"Ya no fui más pal monte, a las malas prefiero a Yoda"
+    [MGCNote noteWithName:@"Ya no fui más pal monte, a las malas prefiero a Yoda que no tiene cuernos :D"
+                 notebook:lugares
+                  context:self.model.context];
+    
+    [MGCNote noteWithName:@"De esto ni mú.... que sus doy pal pelo majetes!!!!"
                  notebook:lugares
                   context:self.model.context];
     
@@ -262,13 +274,6 @@
     
     
 }
-
-
-
-
-
-
-
 
 
 
