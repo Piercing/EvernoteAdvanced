@@ -118,8 +118,8 @@
                         options:0
                      animations:^{
                          // Hago que el teclado suba a la posición del frame superior izquierdo donde se encuentra'modificationDateView'
-                         self.textView.frame = CGRectMake(self.nameView.frame.origin.x,
-                                                          self.nameView.frame.origin.y,
+                         self.textView.frame = CGRectMake(self.modificationDateView.frame.origin.x,
+                                                          self.modificationDateView.frame.origin.y,
                                                           self.view.frame.size.width,
                                                           self.view.frame.size.height);
                      } completion:nil];
