@@ -9,9 +9,15 @@
 #import "MGCNoteViewController.h"
 #import "MGCNote.h"
 #import "MGCPhoto.h"
+#import "MGCNotebook.h"
 
 @interface MGCNoteViewController ()
-@property(nonatomic, strong)MGCNote *model;
+@property (nonatomic, strong) MGCNote *model;
+// Flag para indicar que estamos mostrando una nota nueva
+// Hay que poner el botón de cancelar
+@property (nonatomic) BOOL new; //Por defecto falso => NO
+// Flag para cuando se haya borrado alguna nota
+@property (nonatomic) BOOL deleteCurrentNote;
 @end
 
 @implementation MGCNoteViewController
@@ -23,6 +29,20 @@
         _model = model;
     }
     return self;
+}
+
+-(id)initForNewNoteInNotebook:(MGCNotebook *)notebook{
+    
+    // Creo una nueva nota vacía dentro de esta libreta y
+    // le repasamos el marrón al 'initWithModel' de arriba.
+    
+    MGCNote *newNote = [MGCNote noteWithName:@""// sin nombre
+                                    notebook:notebook // la libreta que recibo
+                                     context:notebook.managedObjectContext];// le pido el contexto a la libreta
+    // Al crear una nueva nota la flag cambia a YES, con esto sabemos que estamos creando una nueva nota.
+    _new = YES;
+    // Devuelvo la nueva nota inicializada a los valores que le acabo de pasar
+    return [self initWithModel:newNote];
 }
 
 #pragma mark - View Lyfecicle
@@ -54,7 +74,22 @@
     // Llamo al accessoryView para que meta la barra de botones (DONE).
     [self setupInputAccessoryView];
     
+    // Comprobamos si se ha creado una nueva nota
+    if (self.new) {
+        // Entonces mostramos el botón de cancelar
+        UIBarButtonItem *cancel = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                   target:self
+                                   action:@selector(cancel:)];
+        
+        // Añado el botón a la UI
+        self.navigationItem.rightBarButtonItem = cancel;
+        
+    }
+    
 }
+
+
 
 // La vuelta, a la toritilla Umm rica rica!!!
 // Cuando va a desaparecer la imagen el usuario ha
@@ -63,9 +98,22 @@
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    // Vista ==> modelo
-    self.model.text = self.textView.text;
-    self.model.photo.image = self.photoView.image;
+    // Elimino la nota
+    if (self.deleteCurrentNote) {
+        // Para borrar un objeto de Core Data, al contexto le mandamos
+        // el mensaje 'deleteObject' y le paso la referencia al objeto.
+        // El contexto estará en el modelo
+        // Obtengo el contexto con 'self.model.managedObjectContext'
+        // y le mando el mensaje 'deleteObject' y elimino el objeto
+        // que es precisamente el modelo 'self.model', que es la nota en sí.
+        [self.model.managedObjectContext deleteObject:self.model];
+    }else{
+        // Sino, sicronizo vista ==> modelo, guardando los datos
+        self.model.text = self.textView.text;
+        self.model.photo.image = self.photoView.image;
+    }
+    
+    
     
     // Observando el teclado cuando va a desaparecer
     [self stopObservingKeyBoard];
@@ -188,15 +236,15 @@
     
     
     // Insertando 'smiles' (emoticonos) en el teclado
-    UIBarButtonItem *smile = [[UIBarButtonItem alloc]initWithTitle:@"O_O"
+    UIBarButtonItem *smile = [[UIBarButtonItem alloc]initWithTitle:@"O_O "
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:@selector(insertTitle:)];
     
-    UIBarButtonItem *smile2 = [[UIBarButtonItem alloc]initWithTitle:@";-)"
-                                                             style:UIBarButtonItemStylePlain
-                                                            target:self
-                                                            action:@selector(insertTitle:)];
+    UIBarButtonItem *smile2 = [[UIBarButtonItem alloc]initWithTitle:@"X_X "
+                                                              style:UIBarButtonItemStylePlain
+                                                             target:self
+                                                             action:@selector(insertTitle:)];
     
     // Creo un array con los botones que quiero meter en la barra.
     [bar setItems:@[smile, smile2, separator, done]];
@@ -210,7 +258,7 @@
     
     // Insertando una cadena donde esté el punto de inserción en el textView
     // El texto que insertamos es el que me viene en el 'sender'
-     [NSString stringWithFormat:@"%@",  @" "], [self.textView insertText:sender.title];
+    [NSString stringWithFormat:@"%@",  @" "], [self.textView insertText:sender.title];
     
 }
 -(void)dismissKeyboard: (id)sender{
@@ -223,6 +271,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Utils
+-(void) cancel:(id) sender{
+    
+    // Tengo que indicar que hay que eliminar la nota
+    // actual con la flag 'deleteCurrentNote' ==> YES
+    self.deleteCurrentNote = YES;
+    
+    // Hago un pop, y ya no hay STOP :-D
+    // Al hacer el pop, se va a ejecutar ViewWillDisapper
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 /*
  #pragma mark - Navigation

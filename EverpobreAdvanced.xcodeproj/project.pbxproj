@@ -107,6 +107,7 @@
 		5268DA1A1C585188004B6BB2 /* MGCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNote.m; sourceTree = "<group>"; };
 		5268DA1B1C585188004B6BB2 /* MGCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebook.h; sourceTree = "<group>"; };
 		5268DA1C1C585188004B6BB2 /* MGCNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebook.m; sourceTree = "<group>"; };
+		5270EC261C66C85400B9FC5F /* MGCDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCDetailViewController.h; sourceTree = "<group>"; };
 		52C53B991C61837900D1BFDF /* MGCNotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotesTableViewController.h; sourceTree = "<group>"; };
 		52C53B9A1C61837900D1BFDF /* MGCNotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,19 +214,14 @@
 		5268D9CD1C582BFB004B6BB2 /* EverpobreAdvanced */ = {
 			isa = PBXGroup;
 			children = (
+				5270EC271C66C85A00B9FC5F /* Protocols */,
 				522139C91C6565200047BB9C /* Resources */,
 				522814A11C59BF12009D07F0 /* Helpers */,
 				522814A91C5B13EF009D07F0 /* Categories */,
 				5268D9F61C582C2C004B6BB2 /* Models */,
 				522814A21C59C72B009D07F0 /* Controllers */,
 				522814AD1C5B1765009D07F0 /* Views */,
-				5268D9D11C582BFB004B6BB2 /* AppDelegate.h */,
-				5268D9D21C582BFB004B6BB2 /* AppDelegate.m */,
-				5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */,
-				5268D9DC1C582BFB004B6BB2 /* LaunchScreen.storyboard */,
-				5268D9DF1C582BFB004B6BB2 /* Info.plist */,
-				5268D9CE1C582BFB004B6BB2 /* Supporting Files */,
-				522814A01C59B8C3009D07F0 /* EverpobreAdvanced.pch */,
+				5270EC281C66CB0600B9FC5F /* App */,
 			);
 			path = EverpobreAdvanced;
 			sourceTree = "<group>";
@@ -287,6 +283,28 @@
 				5268D9F41C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m */,
 			);
 			name = Human;
+			sourceTree = "<group>";
+		};
+		5270EC271C66C85A00B9FC5F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5270EC261C66C85400B9FC5F /* MGCDetailViewController.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		5270EC281C66CB0600B9FC5F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5268D9D11C582BFB004B6BB2 /* AppDelegate.h */,
+				5268D9D21C582BFB004B6BB2 /* AppDelegate.m */,
+				5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */,
+				5268D9DC1C582BFB004B6BB2 /* LaunchScreen.storyboard */,
+				5268D9DF1C582BFB004B6BB2 /* Info.plist */,
+				5268D9CE1C582BFB004B6BB2 /* Supporting Files */,
+				522814A01C59B8C3009D07F0 /* EverpobreAdvanced.pch */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

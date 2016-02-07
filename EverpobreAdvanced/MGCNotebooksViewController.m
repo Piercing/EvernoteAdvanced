@@ -176,6 +176,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
     MGCNotesViewController *notesVC = [MGCNotesViewController coreDataCollectionViewControllerWithFetchedResultsController:nsFRC
                                                                                                                     layout:layout];
     
+    // Después de crearlo le pasamos a la propiedad 'notebook'
+    // creada en 'MGCNotesViewController' => la libreta seleccionada.
+    notesVC.notebook = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     // Lo pusheo
     [self.navigationController pushViewController:notesVC
                                          animated:YES];

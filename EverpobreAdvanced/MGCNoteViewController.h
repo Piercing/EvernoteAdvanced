@@ -10,6 +10,8 @@
 @import MapKit;
 
 @class MGCNote;
+@class MGCNotebook;
+
 @interface MGCNoteViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *modificationDateView;
 @property (weak, nonatomic) IBOutlet UILabel *nameView;
@@ -18,7 +20,12 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 
-// Inicializador
+// Inicializador, necesitamos el modelo para crear notas
+// NOTA: Me falla el protocolo 'Detail' y he vuelto a poner el inicializador aquí
 -(id) initWithModel:(MGCNote *)model;
+
+// Con esto estamos diciendo que nos cree un nuevo
+// controlador para crear una nueva nota en tal libreta.
+-(id)initForNewNoteInNotebook:(MGCNotebook *)notebook;
 
 @end

@@ -11,6 +11,7 @@
 #import "MGCNoteCellView.h"
 #import "MGCPhoto.h"
 #import "MGCNoteViewController.h"
+#import "MGCNotebook.h"
 // Constante para el identificador de la
 // celda y posteriormente poder registrarla.
 static NSString *cellId = @"NoteCellId";
@@ -27,15 +28,23 @@ static NSString *cellId = @"NoteCellId";
     
     // Llamo al Nib
     [self registerNib];
-    // Asigno color a la celda (Xib)
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.85
-                                                            alpha:1];
+    // Asigno título a la celda
     self.title = @"Notas";
+    // Asigno color a la celda (Xib)
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.85 alpha:1];
     
+    // Creo un botón para añadir nuevas notas en una libreta
+    UIBarButtonItem *addBotton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                              target:self
+                                                                              action:@selector(addNewNote:)];
+    
+    // Lo añado a la UI
+    self.navigationItem.rightBarButtonItem = addBotton;
 }
 
 #pragma mark - Xib registration
 -(void)registerNib{
+    
     
     // Creo un Nib
     UINib *nib = [UINib nibWithNibName:@"MGCNoteCollectionViewCell"
@@ -81,6 +90,19 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self.navigationController pushViewController:noteVC
                                          animated:YES];
 }
+
+#pragma mark - Utils
+-(void)addNewNote:(id) sender{
+    
+    // Creo una instancia de MGCNoteViewController con el nuevo inicializador
+    // y le paso la libreta a la que pertenece, que será la del 'indexPath',
+    // es decir, la que pulso el usuario y dentro de ésta está creando una nueva nota.
+    MGCNoteViewController *newNoteVC = [[MGCNoteViewController alloc]initForNewNoteInNotebook:self.notebook];
+    
+    // Hago un push
+    [self.navigationController pushViewController:newNoteVC animated:YES];
+}
+
 
 
 @end
