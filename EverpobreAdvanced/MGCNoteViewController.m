@@ -65,7 +65,7 @@
     // Ahora la fotito dichosa
     UIImage *img = self.model.photo.image;
     if (!img) {
-        img = [UIImage imageNamed:@"photography76"];
+        img = [UIImage imageNamed:@"noImage"];
     }
     self.photoView.image = img;
     

@@ -11,7 +11,9 @@
 
 @interface MGCPhotoViewController : UIViewController<MGCDetailViewController>
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 - (IBAction)takePhoto:(id)sender;
 - (IBAction)deletePhoto:(id)sender;
+- (IBAction)applyVintageEffect:(id)sender;
 
 @end
