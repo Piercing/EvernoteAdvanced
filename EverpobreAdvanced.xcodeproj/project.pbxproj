@@ -38,6 +38,8 @@
 		5268DA1D1C585188004B6BB2 /* MGCNamedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA181C585188004B6BB2 /* MGCNamedEntity.m */; };
 		5268DA1E1C585188004B6BB2 /* MGCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA1A1C585188004B6BB2 /* MGCNote.m */; };
 		5268DA1F1C585188004B6BB2 /* MGCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268DA1C1C585188004B6BB2 /* MGCNotebook.m */; };
+		5270EC2C1C66FBFF00B9FC5F /* MGCPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270EC2A1C66FBFF00B9FC5F /* MGCPhotoViewController.m */; };
+		5270EC2D1C66FBFF00B9FC5F /* MGCPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270EC2B1C66FBFF00B9FC5F /* MGCPhotoViewController.xib */; };
 		52C53B9B1C61837900D1BFDF /* MGCNotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C53B9A1C61837900D1BFDF /* MGCNotesTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,9 @@
 		5268DA1B1C585188004B6BB2 /* MGCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebook.h; sourceTree = "<group>"; };
 		5268DA1C1C585188004B6BB2 /* MGCNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebook.m; sourceTree = "<group>"; };
 		5270EC261C66C85400B9FC5F /* MGCDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCDetailViewController.h; sourceTree = "<group>"; };
+		5270EC291C66FBFF00B9FC5F /* MGCPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCPhotoViewController.h; sourceTree = "<group>"; };
+		5270EC2A1C66FBFF00B9FC5F /* MGCPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCPhotoViewController.m; sourceTree = "<group>"; };
+		5270EC2B1C66FBFF00B9FC5F /* MGCPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGCPhotoViewController.xib; sourceTree = "<group>"; };
 		52C53B991C61837900D1BFDF /* MGCNotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotesTableViewController.h; sourceTree = "<group>"; };
 		52C53B9A1C61837900D1BFDF /* MGCNotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +171,9 @@
 				522139D21C658D270047BB9C /* MGCNoteViewController.h */,
 				522139D31C658D270047BB9C /* MGCNoteViewController.m */,
 				522139D41C658D270047BB9C /* MGCNoteViewController.xib */,
+				5270EC291C66FBFF00B9FC5F /* MGCPhotoViewController.h */,
+				5270EC2A1C66FBFF00B9FC5F /* MGCPhotoViewController.m */,
+				5270EC2B1C66FBFF00B9FC5F /* MGCPhotoViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -394,6 +402,7 @@
 				522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */,
 				5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */,
 				522139CD1C656B920047BB9C /* photography76.png in Resources */,
+				5270EC2D1C66FBFF00B9FC5F /* MGCPhotoViewController.xib in Resources */,
 				522139D61C658D270047BB9C /* MGCNoteViewController.xib in Resources */,
 				522139CB1C65657F0047BB9C /* noImage.png in Resources */,
 				522139BC1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib in Resources */,
@@ -430,6 +439,7 @@
 				5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */,
 				5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */,
 				522139C51C6557750047BB9C /* MGCCoreDataCollectionViewController.m in Sources */,
+				5270EC2C1C66FBFF00B9FC5F /* MGCPhotoViewController.m in Sources */,
 				5268DA141C58516F004B6BB2 /* _MGCNamedEntity.m in Sources */,
 				522814A81C5AD9DF009D07F0 /* MGCNotebooksViewController.m in Sources */,
 				5268D9F91C583045004B6BB2 /* Everpobre.xcdatamodeld in Sources */,
