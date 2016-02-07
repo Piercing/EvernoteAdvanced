@@ -112,10 +112,7 @@
         self.model.photo.image = self.photoView.image;
         self.model.name = self.nameView.text;
     }
-    
-    
-    
-    // Observando el teclado cuando va a desaparecer
+    // Dejar de observar el teclado cuando va a desaparecer.
     [self stopObservingKeyBoard];
     
 }
@@ -229,35 +226,43 @@
 -(void) setupInputAccessoryView{
     
     // Creo las barras
-    UIToolbar *textBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
-    UIToolbar *nameBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    UIToolbar *textBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.textView.frame.size.width, 44)];
+    UIToolbar *nameBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.textView.frame.size.width, 44)];
     
     // BOTONES
-    // Añado botones == 'DONE' (listo)
-    UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                         target:self
-                                                                         action:@selector(dismissKeyboard:)];
     
     // Creo un separador para que aparezca a la derecha el botón de DONE.
     UIBarButtonItem *separator = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                               target:nil
                                                                               action:nil];
+    // Añado botones == 'DONE' (listo)
+    UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                         target:self
+                                                                         action:@selector(hideKeyboard:)];
     
+    UIBarButtonItem *done2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                          target:self
+                                                                          action:@selector(hideKeyboard:)];
+    
+    
+    UIBarButtonItem *separator2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                               target:nil
+                                                                               action:nil];
     
     // Insertando 'smiles' (emoticonos) en el teclado
-    UIBarButtonItem *smile = [[UIBarButtonItem alloc]initWithTitle:@";-) "
+    UIBarButtonItem *smile = [[UIBarButtonItem alloc]initWithTitle:@";-)"
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:@selector(insertTitle:)];
     
-    UIBarButtonItem *smile2 = [[UIBarButtonItem alloc]initWithTitle:@"X_X "
+    UIBarButtonItem *smile2 = [[UIBarButtonItem alloc]initWithTitle:@"X_X"
                                                               style:UIBarButtonItemStylePlain
                                                              target:self
                                                              action:@selector(insertTitle:)];
     
     // Creo un array con los botones que quiero meter en la barra.
-    [textBar setItems:@[done, separator, smile, smile2]];
-    [nameBar setItems:@[separator, done]];
+    [textBar setItems:@[smile, smile2, separator, done]];
+    [nameBar setItems:@[separator, done2]];
     
     // Las asigno como 'accessoryInputView'
     self.textView.inputAccessoryView = textBar;
@@ -269,10 +274,10 @@
     
     // Insertando una cadena donde esté el punto de inserción en el textView
     // El texto que insertamos es el que me viene en el 'sender'
-    [NSString stringWithFormat:@"%@",  @" "], [self.textView insertText:sender.title];
+    [self.textView insertText:[NSString stringWithFormat:@"%@ ", sender.title]];
     
 }
--(void)dismissKeyboard: (id)sender{
+-(void)hideKeyboard: (id)sender{
     [self.view endEditing:YES];
     
 }
