@@ -11,7 +11,7 @@
 #import "MGCPhoto.h"
 #import "MGCNotebook.h"
 
-@interface MGCNoteViewController ()
+@interface MGCNoteViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) MGCNote *model;
 // Flag para indicar que estamos mostrando una nota nueva
 // Hay que poner el botón de cancelar
@@ -86,10 +86,9 @@
         self.navigationItem.rightBarButtonItem = cancel;
         
     }
-    
+    // Me hago delegado de 'UITextField' ==> 'nameView'
+    self.nameView.delegate = self;
 }
-
-
 
 // La vuelta, a la toritilla Umm rica rica!!!
 // Cuando va a desaparecer la imagen el usuario ha
@@ -111,6 +110,7 @@
         // Sino, sicronizo vista ==> modelo, guardando los datos
         self.model.text = self.textView.text;
         self.model.photo.image = self.photoView.image;
+        self.model.name = self.nameView.text;
     }
     
     
@@ -153,81 +153,90 @@
 
 -(void)notifyThatKeyboardWillAppear:(NSNotification *) notification{
     
-    // Extraer el userInfo de la notificación que nos llega y lo
-    // guardo en un NSDIctionary ==> Quien envía la notificación.
-    NSDictionary *dict = notification.userInfo;
     
-    // Extraer la duración de la animanción: para ello lo extraigo del diccionario donde
-    // se ha guardado la clave de dicho objeto (el teclado) y mediante el método de clase
-    // 'UIKeyboardAnimationDurationUserInfoKey' obtengo la duración de ese objeto ==> teclado.
-    double duration = [[dict objectForKey:UIKeyboardAnimationDurationUserInfoKey]doubleValue];
-    
-    // Cambiar el Frame, las propiedades, de la caja de texto
-    // y le doy animación ('pa' que no se aburra el muchacho).
-    [UIView animateWithDuration:duration
-                          delay:0
-                        options:0
-                     animations:^{
-                         // Hago que el teclado suba a la posición del frame superior izquierdo donde se encuentra'modificationDateView'
-                         self.textView.frame = CGRectMake(self.modificationDateView.frame.origin.x,
-                                                          self.modificationDateView.frame.origin.y,
-                                                          self.view.frame.size.width,
-                                                          self.view.frame.size.height);
-                     } completion:nil];
-    
-    // Añado otra animación para cambiarle el alfa
-    [UIView animateWithDuration:duration
-                          delay:0
-                        options:0
-                     animations:^{
-                         
-                         self.textView.alpha = 0.8;
-                     } completion:nil];
-    
+    // Averiguo quien es el 'firstResponder' de la vista para que cuando
+    // edito el 'textField' al aparecer el teclado no me suba la vista
+    // como hace cuando edito en el 'textView' que ahí si hace falta.
+    if ([self.textView isFirstResponder]) {
+        // Extraer el userInfo de la notificación que nos llega y lo
+        // guardo en un NSDIctionary ==> Quien envía la notificación.
+        NSDictionary *dict = notification.userInfo;
+        
+        // Extraer la duración de la animanción: para ello lo extraigo del diccionario donde
+        // se ha guardado la clave de dicho objeto (el teclado) y mediante el método de clase
+        // 'UIKeyboardAnimationDurationUserInfoKey' obtengo la duración de ese objeto ==> teclado.
+        double duration = [[dict objectForKey:UIKeyboardAnimationDurationUserInfoKey]doubleValue];
+        
+        // Cambiar el Frame, las propiedades, de la caja de texto
+        // y le doy animación ('pa' que no se aburra el muchacho).
+        [UIView animateWithDuration:duration
+                              delay:0
+                            options:0
+                         animations:^{
+                             // Hago que el teclado suba a la posición del frame superior izquierdo donde se encuentra'modificationDateView'
+                             self.textView.frame = CGRectMake(self.modificationDateView.frame.origin.x,
+                                                              self.modificationDateView.frame.origin.y,
+                                                              self.view.frame.size.width,
+                                                              self.view.frame.size.height);
+                         } completion:nil];
+        
+        // Añado otra animación para cambiarle el alfa
+        [UIView animateWithDuration:duration
+                              delay:0
+                            options:0
+                         animations:^{
+                             
+                             self.textView.alpha = 0.8;
+                         } completion:nil];
+    }
 }
 
 -(void)notifyThatKeyboardWillDissappear:(NSNotification *)notification{
     
-    // Extraer el userInfo de la notificación que nos llega y lo
-    // guardo en un NSDIctionary ==> Quien envía la notificación.
-    NSDictionary *dict = notification.userInfo;
-    
-    
-    double duration = [[dict objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    [UIView animateWithDuration:duration
-                          delay:0
-                        options:0
-                     animations:^{
-                         
-                         self.textView.frame = CGRectMake(0,
-                                                          375,
-                                                          self.view.frame.size.width,
-                                                          self.textView.frame.size.height);
-                     } completion:nil];
-    
-    [UIView animateWithDuration:duration
-                          delay:0
-                        options:0
-                     animations:^{
-                         
-                         self.textView.alpha = 1;
-                     } completion:nil];
-    
+    // Preguntando quien es el 'firstResponder' aquí, solo se va a producir
+    // la subida y bajada, si el 'firstResponder' es el 'textView' y no con el 'textField'
+    if ([self.textView isFirstResponder]) {
+        // Extraer el userInfo de la notificación que nos llega y lo
+        // guardo en un NSDIctionary ==> Quien envía la notificación.
+        NSDictionary *dict = notification.userInfo;
+        
+        
+        double duration = [[dict objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+        
+        [UIView animateWithDuration:duration
+                              delay:0
+                            options:0
+                         animations:^{
+                             
+                             self.textView.frame = CGRectMake(0,
+                                                              375,
+                                                              self.view.frame.size.width,
+                                                              self.textView.frame.size.height);
+                         } completion:nil];
+        
+        [UIView animateWithDuration:duration
+                              delay:0
+                            options:0
+                         animations:^{
+                             
+                             self.textView.alpha = 1;
+                         } completion:nil];
+    }
 }
 
 // Creo la accesoryView, una barra de botones
 // ==>teclado con una barra de botones encima
 -(void) setupInputAccessoryView{
     
-    // Creo una barra
-    UIToolbar *bar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    // Creo las barras
+    UIToolbar *textBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    UIToolbar *nameBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     
+    // BOTONES
     // Añado botones == 'DONE' (listo)
     UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                          target:self
                                                                          action:@selector(dismissKeyboard:)];
-    
     
     // Creo un separador para que aparezca a la derecha el botón de DONE.
     UIBarButtonItem *separator = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
@@ -236,7 +245,7 @@
     
     
     // Insertando 'smiles' (emoticonos) en el teclado
-    UIBarButtonItem *smile = [[UIBarButtonItem alloc]initWithTitle:@"O_O "
+    UIBarButtonItem *smile = [[UIBarButtonItem alloc]initWithTitle:@";-) "
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:@selector(insertTitle:)];
@@ -247,10 +256,12 @@
                                                              action:@selector(insertTitle:)];
     
     // Creo un array con los botones que quiero meter en la barra.
-    [bar setItems:@[smile, smile2, separator, done]];
+    [textBar setItems:@[done, separator, smile, smile2]];
+    [nameBar setItems:@[separator, done]];
     
-    // La asigno como 'accessoryInputView'
-    self.textView.inputAccessoryView = bar;
+    // Las asigno como 'accessoryInputView'
+    self.textView.inputAccessoryView = textBar;
+    self.nameView.inputAccessoryView = nameBar;
 }
 
 // Recibe un BarButtonItem
@@ -283,6 +294,19 @@
     // Hago un pop, y ya no hay STOP :-D
     // Al hacer el pop, se va a ejecutar ViewWillDisapper
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - UITextFieldDelegate
+// Podría esto retornar...
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    // Podríamos validar el texto, validar lo que se
+    // ha escrito, acepto de momento cualquier cosa.
+    // A textField le mando el siguiente mensaje:
+    [textField resignFirstResponder];
+    // Devuelvo YES.
+    // Con esto ya podemos deshacernos del teclado
+    return YES;
 }
 
 
