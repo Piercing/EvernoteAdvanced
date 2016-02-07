@@ -15,5 +15,6 @@
 - (IBAction)takePhoto:(id)sender;
 - (IBAction)deletePhoto:(id)sender;
 - (IBAction)applyVintageEffect:(id)sender;
+- (IBAction)zoomToFace:(id)sender;
 
 @end

@@ -165,6 +165,52 @@
     });
 }
 
+- (IBAction)zoomToFace:(id)sender {
+
+    NSArray *features = [self featuresInImage:self.photoView.image];
+    
+    if (features) {
+        CIFeature *face = [features lastObject];
+        // necesito un CGRect con la posición de la cara
+        CGRect faceBounds = [face bounds];
+        // Creo una imagen solo con lo que hay en faceBounds
+        CIImage *image = [CIImage imageWithCGImage:self.photoView.image.CGImage];
+        // Creo una nueva imagen que es el zoom de la cara
+        CIImage *cropping = [image imageByCroppingToRect:faceBounds];
+        // LO transformo en una UIImage
+        UIImage *newImage = [UIImage imageWithCIImage:cropping];
+        // Por último se lo paso a la vista
+        self.photoView.image = newImage;
+        
+    }
+}
+
+// Método al que le paso una imagen y devuelve un array con las caras.
+-(NSArray *) featuresInImage:(UIImage *) image{
+    
+    // Contexto
+    CIContext *context = [CIContext contextWithOptions:nil];
+    
+    // Creo el detector
+    CIDetector *detector = [CIDetector
+                            detectorOfType:CIDetectorTypeFace
+                            context:context
+                            options:@{CIDetectorAccuracy: CIDetectorAccuracyHigh}];
+    
+    // Necesito una imagen de tipo CIIMage
+    CIImage *img = [CIImage imageWithCGImage:image.CGImage];
+    
+    // Extraigo las features que son las caras
+    NSArray *features = [detector featuresInImage:img];
+    
+    // Hago que devuelva nil o un array con las caras, pero no que esté vacio
+    if ([features count]) {
+        return  features;
+    }else{
+        return nil;
+    }
+}
+
 #pragma mark - UIImagePickerControllerDelegate
 -(void) imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{

@@ -24,7 +24,7 @@
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="YG5-DE-yda">
                     <rect key="frame" x="169" y="293" width="37" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <color key="color" red="0.80000000000000004" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="color" red="1" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pFH-do-Vth">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -39,6 +39,11 @@
                         <barButtonItem title="Vintage" id="UDR-uz-uZV">
                             <connections>
                                 <action selector="applyVintageEffect:" destination="-1" id="hfc-kf-gr1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Faces" id="SO5-sU-p5j">
+                            <connections>
+                                <action selector="zoomToFace:" destination="-1" id="juC-pT-rpG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ml4-k7-4ML"/>
