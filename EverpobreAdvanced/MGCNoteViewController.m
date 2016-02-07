@@ -95,6 +95,14 @@
                                                                          action:@selector(displayDetailPhoto:)];
     
     [self.photoView addGestureRecognizer:tap];
+    
+    // Añado botón de compartir nota
+    UIBarButtonItem *share = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                          target:self
+                                                                          action:@selector(displayShareController:)];
+    
+    // Añado el botón de compartir
+    self.navigationItem.rightBarButtonItem = share;
 }
 
 // La vuelta, a la toritilla Umm rica rica!!!
@@ -338,6 +346,51 @@
                                          animated:YES];
     
 }
+
+-(void)displayShareController:(id)sender{
+    
+    // Creo un UIACtivityController, tengo que pasarle un array con las
+    // propiedades que quiero compartir de la nota y ninguna puede ser nil
+    // Creo un método ==> 'arrayOfItems'
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]
+                                            initWithActivityItems:[self arrayOfItems]
+                                            applicationActivities:nil];// ==> nil: no aporto ninguna acción personalizada.
+    // Lo presento
+    [self presentViewController:activityVC
+                       animated:YES
+                     completion:nil];
+}
+
+-(NSArray *) arrayOfItems{
+    
+    // Comprobamos que propiedades no son nil y las metemos en el array
+    
+    // Creo array mutable
+    NSMutableArray *items = [NSMutableArray array];
+    
+    // Comprobando
+    if (self.model.name) {
+        [items addObject:self.model.name];
+    }
+    
+    if (self.model.text) {
+        [items addObject:self.model.text];
+    }
+    
+    if (self.model.photo.image) {
+        [items addObject:self.model.photo.image];
+    }
+    return items;
+}
+
+
+
+
+
+
+
+
+
 
 
 
