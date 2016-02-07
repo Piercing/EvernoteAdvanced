@@ -28,7 +28,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </label>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JqO-os-58Z">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage.png" highlightedImage="noImage.png" id="JqO-os-58Z">
                     <rect key="frame" x="8" y="187" width="175" height="170"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -51,7 +51,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <inset key="insetFor6xAndEarlier" minX="-75" minY="0.0" maxX="75" maxY="0.0"/>
                     <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
@@ -61,4 +61,7 @@
             <point key="canvasLocation" x="361.5" y="354.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="noImage.png" width="285" height="174"/>
+    </resources>
 </document>

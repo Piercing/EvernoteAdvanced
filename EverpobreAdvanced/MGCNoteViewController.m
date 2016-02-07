@@ -10,6 +10,7 @@
 #import "MGCNote.h"
 #import "MGCPhoto.h"
 #import "MGCNotebook.h"
+#import "MGCPhotoViewController.h"
 
 @interface MGCNoteViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) MGCNote *model;
@@ -317,18 +318,27 @@
 #pragma mark - Actions
 -(void)displayDetailPhoto:(id)sender{
     
-    NSLog(@"displayDetailPhoto");
+    // Aqui muestro un MGCPhotoViewController haciendo un push
+    // Al inicar con 'initWithModel' asegurarse de que nunca
+    // pasamos nil, hay que asegurarse de que esa foto tiene
+    // una relación con la nota, para ello pasar una foto, que
+    // en el peor de los casos una foto sin imagen, pero hay
+    // pasar siempre una instancia de la clase MGCPhoto, no nil.
+    // Para ello hago una comprobación inicial, si apunta a nil
+    // le asigno una foto vacía.
+    if (self.model.photo == nil) {
+        self.model.photo = [MGCPhoto photoWithImage:nil// aquí si puedo pasarle nil
+                                            context:self.model.managedObjectContext];
+    }
+    // Creo controlador de tipo foto
+    MGCPhotoViewController *photoVC = [[MGCPhotoViewController alloc]initWithModel:self.model.photo];
+    
+    // Lo pusheo
+    [self.navigationController pushViewController:photoVC
+                                         animated:YES];
     
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 @end

@@ -14,8 +14,6 @@
 		522139C51C6557750047BB9C /* MGCCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139C41C6557750047BB9C /* MGCCoreDataCollectionViewController.m */; };
 		522139C81C6558080047BB9C /* MGCNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139C71C6558080047BB9C /* MGCNotesViewController.m */; };
 		522139CB1C65657F0047BB9C /* noImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 522139CA1C65657F0047BB9C /* noImage.png */; };
-		522139CD1C656B920047BB9C /* photography76.png in Resources */ = {isa = PBXBuildFile; fileRef = 522139CC1C656B920047BB9C /* photography76.png */; };
-		522139CF1C656D0A0047BB9C /* No-image-available-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 522139CE1C656D0A0047BB9C /* No-image-available-hi.png */; };
 		522139D11C656D1F0047BB9C /* City-No-Camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 522139D01C656D1F0047BB9C /* City-No-Camera-icon.png */; };
 		522139D51C658D270047BB9C /* MGCNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139D31C658D270047BB9C /* MGCNoteViewController.m */; };
 		522139D61C658D270047BB9C /* MGCNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522139D41C658D270047BB9C /* MGCNoteViewController.xib */; };
@@ -66,8 +64,6 @@
 		522139C61C6558080047BB9C /* MGCNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotesViewController.h; sourceTree = "<group>"; };
 		522139C71C6558080047BB9C /* MGCNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotesViewController.m; sourceTree = "<group>"; };
 		522139CA1C65657F0047BB9C /* noImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noImage.png; sourceTree = "<group>"; };
-		522139CC1C656B920047BB9C /* photography76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photography76.png; sourceTree = "<group>"; };
-		522139CE1C656D0A0047BB9C /* No-image-available-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No-image-available-hi.png"; sourceTree = "<group>"; };
 		522139D01C656D1F0047BB9C /* City-No-Camera-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "City-No-Camera-icon.png"; sourceTree = "<group>"; };
 		522139D21C658D270047BB9C /* MGCNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNoteViewController.h; sourceTree = "<group>"; };
 		522139D31C658D270047BB9C /* MGCNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNoteViewController.m; sourceTree = "<group>"; };
@@ -139,8 +135,6 @@
 		522139C91C6565200047BB9C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				522139CC1C656B920047BB9C /* photography76.png */,
-				522139CE1C656D0A0047BB9C /* No-image-available-hi.png */,
 				522139D01C656D1F0047BB9C /* City-No-Camera-icon.png */,
 				522139CA1C65657F0047BB9C /* noImage.png */,
 			);
@@ -397,11 +391,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				522139CF1C656D0A0047BB9C /* No-image-available-hi.png in Resources */,
 				522139D11C656D1F0047BB9C /* City-No-Camera-icon.png in Resources */,
 				522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */,
 				5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */,
-				522139CD1C656B920047BB9C /* photography76.png in Resources */,
 				5270EC2D1C66FBFF00B9FC5F /* MGCPhotoViewController.xib in Resources */,
 				522139D61C658D270047BB9C /* MGCNoteViewController.xib in Resources */,
 				522139CB1C65657F0047BB9C /* noImage.png in Resources */,
