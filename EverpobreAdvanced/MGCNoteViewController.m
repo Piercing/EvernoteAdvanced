@@ -88,6 +88,12 @@
     }
     // Me hago delegado de 'UITextField' ==> 'nameView'
     self.nameView.delegate = self;
+    
+    // Añado un gesture recognizer a la foto
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                         action:@selector(displayDetailPhoto:)];
+    
+    [self.photoView addGestureRecognizer:tap];
 }
 
 // La vuelta, a la toritilla Umm rica rica!!!
@@ -243,12 +249,6 @@
     UIBarButtonItem *done2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                           target:self
                                                                           action:@selector(hideKeyboard:)];
-    
-    
-    UIBarButtonItem *separator2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                                                               target:nil
-                                                                               action:nil];
-    
     // Insertando 'smiles' (emoticonos) en el teclado
     UIBarButtonItem *smile = [[UIBarButtonItem alloc]initWithTitle:@";-)"
                                                              style:UIBarButtonItemStylePlain
@@ -314,6 +314,12 @@
     return YES;
 }
 
+#pragma mark - Actions
+-(void)displayDetailPhoto:(id)sender{
+    
+    NSLog(@"displayDetailPhoto");
+    
+}
 
 /*
  #pragma mark - Navigation
