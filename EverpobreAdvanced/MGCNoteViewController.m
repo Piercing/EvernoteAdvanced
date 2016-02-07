@@ -180,14 +180,39 @@
                                                                          target:self
                                                                          action:@selector(dismissKeyboard:)];
     
+    
+    // Creo un separador para que aparezca a la derecha el botón de DONE.
+    UIBarButtonItem *separator = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil
+                                                                              action:nil];
+    
+    
+    // Insertando 'smiles' (emoticonos) en el teclado
+    UIBarButtonItem *smile = [[UIBarButtonItem alloc]initWithTitle:@"O_O"
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(insertTitle:)];
+    
+    UIBarButtonItem *smile2 = [[UIBarButtonItem alloc]initWithTitle:@";-)"
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(insertTitle:)];
+    
     // Creo un array con los botones que quiero meter en la barra.
-    [bar setItems:@[done]];
+    [bar setItems:@[smile, smile2, separator, done]];
     
     // La asigno como 'accessoryInputView'
     self.textView.inputAccessoryView = bar;
-    
 }
 
+// Recibe un BarButtonItem
+-(void)insertTitle:(UIBarButtonItem *)sender{
+    
+    // Insertando una cadena donde esté el punto de inserción en el textView
+    // El texto que insertamos es el que me viene en el 'sender'
+     [NSString stringWithFormat:@"%@",  @" "], [self.textView insertText:sender.title];
+    
+}
 -(void)dismissKeyboard: (id)sender{
     [self.view endEditing:YES];
     
