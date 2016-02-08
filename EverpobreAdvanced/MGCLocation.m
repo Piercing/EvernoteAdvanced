@@ -26,10 +26,10 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[MGCLocation entityName]];
     
     // Predicado para longitud
-    NSPredicate *longitude = [NSPredicate predicateWithFormat:@"longitude == %f", location.coordinate.longitude];
+    NSPredicate *longitude = [NSPredicate predicateWithFormat:@"abs(longitude) - abs(%lf) < 0.001", location.coordinate.longitude];
     
     // Predicado para la latitud
-    NSPredicate *latitude = [NSPredicate predicateWithFormat:@"latitude == %f", location.coordinate.latitude];
+    NSPredicate *latitude = [NSPredicate predicateWithFormat:@"abs(latitude) - abs(%lf) < 0.001", location.coordinate.latitude];
     
     // Predicado compuesto
     request.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[latitude, longitude]];

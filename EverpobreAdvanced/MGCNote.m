@@ -99,10 +99,7 @@
         
     }else{
         NSLog(@"¡¡No debiera de haber llegado nunca hasta aquirrrr!!");
-    }
-    
-    
-    
+    } 
 }
 
 -(void) zapLocationmanager{
@@ -114,12 +111,6 @@
     self.locationManager.delegate = nil;
     self.locationManager = nil;
 }
-
-
-
-
-
-
 
 
 
