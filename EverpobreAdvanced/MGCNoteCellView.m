@@ -19,8 +19,13 @@
 // Creo un array con las propiedades (keys, según cocoa)
 // con las propiedades que queremos observar.
 +(NSArray *)keys{
-    return  @[@"name", @"modificationDate", @"photo.image"];
-    
+    return  @[@"name",
+              @"location",
+              @"photo.image",
+              @"location.address",
+              @"modificationDate",
+              @"location.latitude",
+              @"location.longitude"];
 }
 
 // Me doy de alta, observando las propiedades de la nota
@@ -54,13 +59,22 @@
     // Compruebo que la imagen que tengo que mostrar es nil
     if(self.note.photo.image == nil){
         // Cargo imagen no available
-        image = [UIImage imageNamed:@"photography76"];
+        image = [UIImage imageNamed:@"noImage.png"];
     }else{
         // Sino la que corresponda
         image = self.note.photo.image;
     }
     // Le paso la imagen de no available sino encuentra alguna foto
     self.photoView.image = image;
+    
+    // Si la nota tiene location
+    if (self.note.hasLocation) {
+        // Le añado la imagen placemark
+        self.locationView.image = [UIImage imageNamed:@"placemark.png"];
+        // sino, pues a nirrllll
+    }else{
+        self.locationView.image = nil;
+    }
 }
 
 // Tengo que recibir la notificación y hacer algo, por último darme de baja
@@ -86,7 +100,6 @@
     // Sincronizo con nil y los textos van a aparecer vacios y la imagen no available
     [self syncWithNote];
 }
-
 
 
 

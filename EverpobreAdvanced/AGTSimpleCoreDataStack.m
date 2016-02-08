@@ -49,6 +49,8 @@
         _storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
         
         
+        // Migración de forma automática de los datos de una
+        // versión a otra y mapea los datos automágicamente también.
         NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
                                   NSInferMappingModelAutomaticallyOption: @YES};
         

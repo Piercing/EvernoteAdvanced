@@ -11,7 +11,6 @@
 #import "MGCNoteCellView.h"
 #import "MGCPhoto.h"
 #import "MGCNoteViewController.h"
-#import "MGCNotebook.h"
 // Constante para el identificador de la
 // celda y posteriormente poder registrarla.
 static NSString *cellId = @"NoteCellId";
@@ -42,10 +41,9 @@ static NSString *cellId = @"NoteCellId";
     self.navigationItem.rightBarButtonItem = addBotton;
 }
 
-#pragma mark - Xib registration
+#pragma mark - Xib registration (cell)
 -(void)registerNib{
-    
-    
+ 
     // Creo un Nib
     UINib *nib = [UINib nibWithNibName:@"MGCNoteCollectionViewCell"
                                 bundle:nil];
@@ -100,7 +98,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     MGCNoteViewController *newNoteVC = [[MGCNoteViewController alloc]initForNewNoteInNotebook:self.notebook];
     
     // Hago un push
-    [self.navigationController pushViewController:newNoteVC animated:YES];
+    [self.navigationController pushViewController:newNoteVC
+                                         animated:YES];
 }
 
 

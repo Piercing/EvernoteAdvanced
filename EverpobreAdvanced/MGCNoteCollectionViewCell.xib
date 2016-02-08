@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="8" width="192" height="75"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-pz-KNI">
-                        <rect key="frame" x="8" y="91" width="176" height="25"/>
+                        <rect key="frame" x="8" y="91" width="143" height="25"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -29,11 +29,15 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placemark.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dw3-NY-h6P">
+                        <rect key="frame" x="159" y="86" width="25" height="25"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" white="0.94951693010000005" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="locationView" destination="Dw3-NY-h6P" id="TGH-21-yqv"/>
                 <outlet property="modificationDateView" destination="uVu-pz-KNI" id="WqR-4r-OF1"/>
                 <outlet property="photoView" destination="uLi-6O-wRQ" id="cAE-Nf-p97"/>
                 <outlet property="titleView" destination="vSp-Sl-oLI" id="8gj-W3-no8"/>
@@ -43,5 +47,6 @@
     </objects>
     <resources>
         <image name="noImage.png" width="285" height="174"/>
+        <image name="placemark.png" width="256" height="256"/>
     </resources>
 </document>

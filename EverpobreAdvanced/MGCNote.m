@@ -15,12 +15,13 @@
 
 // Implemento el getter ==> 'hasLocation', con esto se caya el compilatorrrrr
 -(BOOL) hasLocation{
-    return (nil == self.location);
+    // 'hasLocation' es verdadero cuando es distinto de nirrrllll
+    return (nil != self.location);
 }
 
 +(NSArray *)observableKeyNames{
     
-    return @[@"name", @"creationDate", @"notebook", @"photo"];
+    return @[@"name", @"creationDate", @"notebook", @"photo", @"location"];
 }
 
 +(instancetype) noteWithName:(NSString *) name
@@ -64,6 +65,10 @@
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         // Le pido que empiece con la geolocalizatiorrrnnnnnn
         [self.locationManager startUpdatingLocation];
+        // Le pongo un límete de tiempo, si tarda mucho no interesa
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self zapLocationmanager];
+        });
     }
 }
 
@@ -78,24 +83,37 @@
     // La útlima del array es la güena, cuidadín que consume un egg de batery.
     
     // Por tanto lo paro
-    [self.locationManager stopUpdatingLocation];
-    // Ahora, lo asigno a nil. ¿Pourquoi? => Porque
-    // según un bug, 'locationManager',sigue mandando
-    // mensajes a pesar de decirle que pare al mu jodio.
-    self.locationManager = nil;
+    [self zapLocationmanager];
     
-    // Pillo la última localización => Risas del Argentino
-    CLLocation *location = [locations lastObject];
+    // Sólo voy a crear una location, si la nota no lo
+    // tiene => toda precaución es poca amigo conductorrr
+    // Por tanto sino tengo una localización => 'hasLocation'
+    if (![self hasLocation]) {
+        // Pillo la última localización => Risas del Argentino
+        CLLocation *location = [locations lastObject];
+        
+        // Creo mi location ==> MGCLocation, implemento
+        // =>'locationWithCLLocation' en 'MGCLocation.h'
+        self.location  = [MGCLocation locationWithCLLocation: location
+                                                     forNote: self];
+        
+    }else{
+        NSLog(@"¡¡No debiera de haber llegado nunca hasta aquirrrr!!");
+    }
     
-    // Creo mi location ==> MGCLocation, implemento
-    // =>'locationWithCLLocation' en 'MGCLocation.h'
-    self.location  = [MGCLocation locationWithCLLocation: loc
-                                                 forNote: self];
     
     
 }
 
-
+-(void) zapLocationmanager{
+    
+    // Paro la geolocalización cuando se demora.
+    // ¿Pourquoi? => Porque según un bug, 'locationManager'sigue
+    // mandando mensajes a pesar de decirle que pare al mu jodio.
+    [self.locationManager stopUpdatingLocation];
+    self.locationManager.delegate = nil;
+    self.locationManager = nil;
+}
 
 
 

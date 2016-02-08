@@ -25,6 +25,7 @@
 		522814B21C5B1A71009D07F0 /* MGCNotebookCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */; };
 		526218641C681A9900A9777B /* MGCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 526218631C681A9900A9777B /* MGCLocation.m */; };
 		526218671C681AA300A9777B /* _MGCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 526218661C681AA300A9777B /* _MGCLocation.m */; };
+		526218701C685B4C00A9777B /* placemark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5262186F1C685B4C00A9777B /* placemark.png */; };
 		5268D9D01C582BFB004B6BB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9CF1C582BFB004B6BB2 /* main.m */; };
 		5268D9D31C582BFB004B6BB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268D9D21C582BFB004B6BB2 /* AppDelegate.m */; };
 		5268D9DB1C582BFB004B6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5268D9DA1C582BFB004B6BB2 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		526218631C681A9900A9777B /* MGCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCLocation.m; sourceTree = "<group>"; };
 		526218651C681AA300A9777B /* _MGCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MGCLocation.h; sourceTree = "<group>"; };
 		526218661C681AA300A9777B /* _MGCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MGCLocation.m; sourceTree = "<group>"; };
+		5262186F1C685B4C00A9777B /* placemark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placemark.png; sourceTree = "<group>"; };
 		5268D9CB1C582BFB004B6BB2 /* EverpobreAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverpobreAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5268D9CF1C582BFB004B6BB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5268D9D11C582BFB004B6BB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		522139C91C6565200047BB9C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5262186F1C685B4C00A9777B /* placemark.png */,
 				522139D01C656D1F0047BB9C /* City-No-Camera-icon.png */,
 				522139CA1C65657F0047BB9C /* noImage.png */,
 			);
@@ -412,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522139D11C656D1F0047BB9C /* City-No-Camera-icon.png in Resources */,
+				526218701C685B4C00A9777B /* placemark.png in Resources */,
 				522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */,
 				5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */,
 				5270EC2D1C66FBFF00B9FC5F /* MGCPhotoViewController.xib in Resources */,
