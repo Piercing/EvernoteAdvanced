@@ -9,10 +9,12 @@ extern const struct MGCNoteAttributes {
 } MGCNoteAttributes;
 
 extern const struct MGCNoteRelationships {
+	__unsafe_unretained NSString *location;
 	__unsafe_unretained NSString *notebook;
 	__unsafe_unretained NSString *photo;
 } MGCNoteRelationships;
 
+@class MGCLocation;
 @class MGCNotebook;
 @class MGCPhoto;
 
@@ -29,6 +31,10 @@ extern const struct MGCNoteRelationships {
 
 //- (BOOL)validateText:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) MGCLocation *location;
+
+//- (BOOL)validateLocation:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) MGCNotebook *notebook;
 
 //- (BOOL)validateNotebook:(id*)value_ error:(NSError**)error_;
@@ -43,6 +49,9 @@ extern const struct MGCNoteRelationships {
 
 - (NSString*)primitiveText;
 - (void)setPrimitiveText:(NSString*)value;
+
+- (MGCLocation*)primitiveLocation;
+- (void)setPrimitiveLocation:(MGCLocation*)value;
 
 - (MGCNotebook*)primitiveNotebook;
 - (void)setPrimitiveNotebook:(MGCNotebook*)value;

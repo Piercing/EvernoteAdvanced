@@ -8,6 +8,7 @@ const struct MGCNoteAttributes MGCNoteAttributes = {
 };
 
 const struct MGCNoteRelationships MGCNoteRelationships = {
+	.location = @"location",
 	.notebook = @"notebook",
 	.photo = @"photo",
 };
@@ -42,6 +43,8 @@ const struct MGCNoteRelationships MGCNoteRelationships = {
 }
 
 @dynamic text;
+
+@dynamic location;
 
 @dynamic notebook;
 
