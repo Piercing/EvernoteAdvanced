@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Location" representedClassName="MGCLocation" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitud" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="notes" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="location" inverseEntity="Note" syncable="YES"/>
+    </entity>
     <entity name="NamedEntity" representedClassName="MGCNamedEntity" syncable="YES">
         <attribute name="creationDate" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="modificationDate" attributeType="Date" indexed="YES" syncable="YES"/>
@@ -7,6 +13,7 @@
     </entity>
     <entity name="Note" representedClassName="MGCNote" parentEntity="NamedEntity" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Location" inverseName="notes" inverseEntity="Location" syncable="YES"/>
         <relationship name="notebook" maxCount="1" deletionRule="Nullify" destinationEntity="Notebook" inverseName="notes" inverseEntity="Notebook" syncable="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Photo" inverseName="notes" inverseEntity="Photo" syncable="YES"/>
     </entity>
@@ -19,8 +26,9 @@
     </entity>
     <elements>
         <element name="NamedEntity" positionX="-270" positionY="-504" width="128" height="88"/>
-        <element name="Note" positionX="-414" positionY="-322" width="128" height="90"/>
+        <element name="Note" positionX="-414" positionY="-322" width="128" height="105"/>
         <element name="Notebook" positionX="-155" positionY="-306" width="128" height="60"/>
         <element name="Photo" positionX="-594" positionY="-315" width="128" height="30"/>
+        <element name="Location" positionX="-369" positionY="-369" width="128" height="105"/>
     </elements>
 </model>
