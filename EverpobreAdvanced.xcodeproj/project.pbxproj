@@ -80,6 +80,7 @@
 		522814AE1C5B1831009D07F0 /* MGCNotebookCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGCNotebookCellView.xib; sourceTree = "<group>"; };
 		522814B01C5B1A71009D07F0 /* MGCNotebookCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebookCellView.h; sourceTree = "<group>"; };
 		522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebookCellView.m; sourceTree = "<group>"; };
+		526218611C68157B00A9777B /* Everpobre2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre2.xcdatamodel; sourceTree = "<group>"; };
 		5268D9CB1C582BFB004B6BB2 /* EverpobreAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverpobreAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5268D9CF1C582BFB004B6BB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5268D9D11C582BFB004B6BB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -633,9 +634,10 @@
 		5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				526218611C68157B00A9777B /* Everpobre2.xcdatamodel */,
 				5268D9F81C583045004B6BB2 /* Everpobre.xcdatamodel */,
 			);
-			currentVersion = 5268D9F81C583045004B6BB2 /* Everpobre.xcdatamodel */;
+			currentVersion = 526218611C68157B00A9777B /* Everpobre2.xcdatamodel */;
 			path = Everpobre.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
