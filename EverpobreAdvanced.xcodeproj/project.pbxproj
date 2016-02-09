@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207F3B51C585AF500C86E8A /* _MGCPhoto.m */; };
 		5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207F3B81C585B0B00C86E8A /* MGCPhoto.m */; };
+		521A0A6D1C69565B006F5558 /* _MGCMapSnapShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 521A0A6C1C69565B006F5558 /* _MGCMapSnapShot.m */; };
+		521A0A701C695671006F5558 /* MGCMapSnapShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 521A0A6F1C695671006F5558 /* MGCMapSnapShot.m */; };
+		521A0A721C696CB7006F5558 /* noSnapshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A0A711C696CB7006F5558 /* noSnapshot.png */; };
+		521A0A761C697A3C006F5558 /* MGCLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521A0A741C697A3C006F5558 /* MGCLocationViewController.m */; };
+		521A0A771C697A3C006F5558 /* MGCLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521A0A751C697A3C006F5558 /* MGCLocationViewController.xib */; };
 		522139BC1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522139BB1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib */; };
 		522139BF1C6554B00047BB9C /* MGCNoteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139BE1C6554B00047BB9C /* MGCNoteCellView.m */; };
 		522139C51C6557750047BB9C /* MGCCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522139C41C6557750047BB9C /* MGCCoreDataCollectionViewController.m */; };
@@ -59,6 +64,15 @@
 		5207F3B51C585AF500C86E8A /* _MGCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MGCPhoto.m; sourceTree = "<group>"; };
 		5207F3B71C585B0B00C86E8A /* MGCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCPhoto.h; sourceTree = "<group>"; };
 		5207F3B81C585B0B00C86E8A /* MGCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCPhoto.m; sourceTree = "<group>"; };
+		521A0A6A1C6950E4006F5558 /* Everpobre3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre3.xcdatamodel; sourceTree = "<group>"; };
+		521A0A6B1C69565B006F5558 /* _MGCMapSnapShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MGCMapSnapShot.h; sourceTree = "<group>"; };
+		521A0A6C1C69565B006F5558 /* _MGCMapSnapShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MGCMapSnapShot.m; sourceTree = "<group>"; };
+		521A0A6E1C695671006F5558 /* MGCMapSnapShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCMapSnapShot.h; sourceTree = "<group>"; };
+		521A0A6F1C695671006F5558 /* MGCMapSnapShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCMapSnapShot.m; sourceTree = "<group>"; };
+		521A0A711C696CB7006F5558 /* noSnapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noSnapshot.png; sourceTree = "<group>"; };
+		521A0A731C697A3C006F5558 /* MGCLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCLocationViewController.h; sourceTree = "<group>"; };
+		521A0A741C697A3C006F5558 /* MGCLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCLocationViewController.m; sourceTree = "<group>"; };
+		521A0A751C697A3C006F5558 /* MGCLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGCLocationViewController.xib; sourceTree = "<group>"; };
 		522139BB1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGCNoteCollectionViewCell.xib; sourceTree = "<group>"; };
 		522139BD1C6554B00047BB9C /* MGCNoteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNoteCellView.h; sourceTree = "<group>"; };
 		522139BE1C6554B00047BB9C /* MGCNoteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNoteCellView.m; sourceTree = "<group>"; };
@@ -144,6 +158,7 @@
 		522139C91C6565200047BB9C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				521A0A711C696CB7006F5558 /* noSnapshot.png */,
 				5262186F1C685B4C00A9777B /* placemark.png */,
 				522139D01C656D1F0047BB9C /* City-No-Camera-icon.png */,
 				522139CA1C65657F0047BB9C /* noImage.png */,
@@ -178,6 +193,9 @@
 				5270EC291C66FBFF00B9FC5F /* MGCPhotoViewController.h */,
 				5270EC2A1C66FBFF00B9FC5F /* MGCPhotoViewController.m */,
 				5270EC2B1C66FBFF00B9FC5F /* MGCPhotoViewController.xib */,
+				521A0A731C697A3C006F5558 /* MGCLocationViewController.h */,
+				521A0A741C697A3C006F5558 /* MGCLocationViewController.m */,
+				521A0A751C697A3C006F5558 /* MGCLocationViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +295,8 @@
 		5268DA0C1C5846C4004B6BB2 /* Machine */ = {
 			isa = PBXGroup;
 			children = (
+				521A0A6B1C69565B006F5558 /* _MGCMapSnapShot.h */,
+				521A0A6C1C69565B006F5558 /* _MGCMapSnapShot.m */,
 				526218651C681AA300A9777B /* _MGCLocation.h */,
 				526218661C681AA300A9777B /* _MGCLocation.m */,
 				5207F3B41C585AF500C86E8A /* _MGCPhoto.h */,
@@ -294,6 +314,8 @@
 		5268DA0D1C5846CF004B6BB2 /* Human */ = {
 			isa = PBXGroup;
 			children = (
+				521A0A6E1C695671006F5558 /* MGCMapSnapShot.h */,
+				521A0A6F1C695671006F5558 /* MGCMapSnapShot.m */,
 				526218621C681A9900A9777B /* MGCLocation.h */,
 				526218631C681A9900A9777B /* MGCLocation.m */,
 				5268DA171C585188004B6BB2 /* MGCNamedEntity.h */,
@@ -418,9 +440,11 @@
 				526218701C685B4C00A9777B /* placemark.png in Resources */,
 				522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */,
 				5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */,
+				521A0A721C696CB7006F5558 /* noSnapshot.png in Resources */,
 				5270EC2D1C66FBFF00B9FC5F /* MGCPhotoViewController.xib in Resources */,
 				522139D61C658D270047BB9C /* MGCNoteViewController.xib in Resources */,
 				522139CB1C65657F0047BB9C /* noImage.png in Resources */,
+				521A0A771C697A3C006F5558 /* MGCLocationViewController.xib in Resources */,
 				522139BC1C6553B70047BB9C /* MGCNoteCollectionViewCell.xib in Resources */,
 				5268D9DB1C582BFB004B6BB2 /* Assets.xcassets in Resources */,
 			);
@@ -455,6 +479,7 @@
 				522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */,
 				5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */,
 				5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */,
+				521A0A6D1C69565B006F5558 /* _MGCMapSnapShot.m in Sources */,
 				526218641C681A9900A9777B /* MGCLocation.m in Sources */,
 				522139C51C6557750047BB9C /* MGCCoreDataCollectionViewController.m in Sources */,
 				5270EC2C1C66FBFF00B9FC5F /* MGCPhotoViewController.m in Sources */,
@@ -463,7 +488,9 @@
 				5268D9F91C583045004B6BB2 /* Everpobre.xcdatamodeld in Sources */,
 				5268DA1E1C585188004B6BB2 /* MGCNote.m in Sources */,
 				5268D9F51C582C1F004B6BB2 /* AGTSimpleCoreDataStack.m in Sources */,
+				521A0A701C695671006F5558 /* MGCMapSnapShot.m in Sources */,
 				5268D9D01C582BFB004B6BB2 /* main.m in Sources */,
+				521A0A761C697A3C006F5558 /* MGCLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +608,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = EverpobreAdvanced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weblogmerlos.EverpobreAdvanced;
@@ -592,6 +620,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = EverpobreAdvanced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weblogmerlos.EverpobreAdvanced;
@@ -659,10 +688,11 @@
 		5268D9F71C583045004B6BB2 /* Everpobre.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				521A0A6A1C6950E4006F5558 /* Everpobre3.xcdatamodel */,
 				526218611C68157B00A9777B /* Everpobre2.xcdatamodel */,
 				5268D9F81C583045004B6BB2 /* Everpobre.xcdatamodel */,
 			);
-			currentVersion = 526218611C68157B00A9777B /* Everpobre2.xcdatamodel */;
+			currentVersion = 521A0A6A1C6950E4006F5558 /* Everpobre3.xcdatamodel */;
 			path = Everpobre.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

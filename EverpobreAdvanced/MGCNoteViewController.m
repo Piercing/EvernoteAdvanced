@@ -11,8 +11,11 @@
 #import "MGCPhoto.h"
 #import "MGCNotebook.h"
 #import "MGCPhotoViewController.h"
+#import "MGCLocation.h"
+#import "MGCMapSnapShot.h"
+#import "MGCLocationViewController.h"
 
-@interface MGCNoteViewController () <UITextFieldDelegate>
+@interface MGCNoteViewController () <UITextFieldDelegate, UITextViewDelegate>
 @property (nonatomic, strong) MGCNote *model;
 // Flag para indicar que estamos mostrando una nota nueva
 // Hay que poner el botón de cancelar
@@ -65,9 +68,29 @@
     // Ahora la fotito dichosa
     UIImage *img = self.model.photo.image;
     if (!img) {
-        img = [UIImage imageNamed:@"noImage"];
+        img = [UIImage imageNamed:@"noImage.png"];
     }
     self.photoView.image = img;
+    
+    // // Ahora snapshot dichoso
+    img = self.model.location.mapSnapshot.image;
+    // Si tengo location 'smapshot => YES
+    self.mapSnapshotView.userInteractionEnabled = YES;
+    // Sino tengo imagen, tiro de la que acabo de incorporar =>'img'
+    if (!img) {
+        img = [UIImage imageNamed:@"noSnapshot.png"];
+        // Sino tengo location 'smapshot => NO
+        self.mapSnapshotView.userInteractionEnabled = NO;
+    }
+    
+    // Se lo paso a la imagen
+    self.mapSnapshotView.image = img;
+    
+    // Como este 'snapshot' se obtiene en 2º plano
+    // podría ser que aún no tuviera la imagen, por
+    // tanto, la observo para si cambia enterarme.
+    [self startObservingSnapshot];
+    
     
     // Observando el teclado cuando va a aparecer
     [self starObservingKeyBoard];
@@ -88,7 +111,9 @@
         
     }
     // Me hago delegado de 'UITextField' ==> 'nameView'
+    // y de 'UITexView' ==> 'textView'
     self.nameView.delegate = self;
+    self.textView.delegate = self;
     
     // Añado un gesture recognizer a la foto
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self
@@ -100,6 +125,15 @@
     UIBarButtonItem *share = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                           target:self
                                                                           action:@selector(displayShareController:)];
+    
+    
+    // Añado gesture recognizer para vista de 'location'
+    
+    UITapGestureRecognizer *snapTap = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                             action:@selector(displayDetailLocation:)];
+    
+    // Lo añado el gesto
+    [self.mapSnapshotView addGestureRecognizer:snapTap];
     
     // Añado el botón de compartir
     self.navigationItem.rightBarButtonItem = share;
@@ -129,6 +163,7 @@
     }
     // Dejar de observar el teclado cuando va a desaparecer.
     [self stopObservingKeyBoard];
+    [self stopObservingSnapshot];
     
 }
 
@@ -347,6 +382,15 @@
     
 }
 
+-(void)displayDetailLocation:(id) sender{
+    
+    // Creo un controlador
+    MGCLocationViewController *locVC = [[MGCLocationViewController alloc]initWithLocation:self.model.location];
+    // Hago un push
+    [self.navigationController pushViewController:locVC
+                                         animated:YES];
+}
+
 -(void)displayShareController:(id)sender{
     
     // Creo un UIACtivityController, tengo que pasarle un array con las
@@ -383,15 +427,49 @@
     return items;
 }
 
+#pragma mark - KVO
+// Me doy de alta para obeservar los datos
+-(void)startObservingSnapshot{
+    // Observo si cambian los datos => 'location.mapSnapshot.snapshotData'
+    // Yo, el modelo, que soy quien tiene esa propiedad, quiero observarla.
+    [self.model addObserver:self
+                 forKeyPath:@"location.mapSnapshot.snapshotData"
+                    options:NSKeyValueObservingOptionNew
+                    context:NULL];
+}
 
+// Y por supuesto me doy de baja, a él a él
+-(void) stopObservingSnapshot{
+    
+    // Yo, el modelo, que soy quien tiene esa propiedad, quiero observarla.
+    [self.model removeObserver:self
+                    forKeyPath:@"location.mapSnapshot.snapshotData"];
+}
 
-
-
-
-
-
+// Por último, tengo que ser informado de que ha cambiado, SI SEÑOR SI!!!
+-(void) observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context{
+    
+    UIImage *img = self.model.location.mapSnapshot.image;
+    // Si tengo location 'smapshot => YES
+    self.mapSnapshotView.userInteractionEnabled = YES;
+    // Sino tengo imagen, tiro de la que acabo de incorporar =>'img'
+    if (!img) {
+        // Sino tengo location 'smapshot => NO
+        self.mapSnapshotView.userInteractionEnabled = NO;
+        img = [UIImage imageNamed:@"noSnapshot.png"];
+    }
+    
+    // Se lo paso a la imagen
+    self.mapSnapshotView.image = img;
+    
+}
 
 
 
 
 @end
+
+

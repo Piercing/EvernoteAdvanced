@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *modificationDateView;
 @property (weak, nonatomic) IBOutlet UITextField *nameView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIImageView *mapSnapshotView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 

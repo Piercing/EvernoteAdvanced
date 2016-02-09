@@ -1,5 +1,7 @@
 #import "MGCLocation.h"
 #import "MGCNote.h"
+#import "MGCMapSnapShot.h"
+#import <CoreLocation/CoreLocation.h>
 @import AddressBookUI;
 @import Contacts;
 
@@ -83,8 +85,50 @@
                         }
                     }];
         
+        // Antes devolver la location, tengo que crear un 'mapSnapshot'
+        // que en 2º plano estará el muchacho haciendo sus cosas, como
+        // descargarse algún mapa o vaya usted a saber si no se da con
+        // Yoda, es lo que tiene el segundo plano :-D => ~ lado oscuro
+        loc.mapSnapshot = [MGCMapSnapShot mapSnapShotForLocation:loc];
+        // Devuelvo la localización
         return loc;
     }
 }
+
+#pragma mark - MKAnnotation
+// Título de la anotación
+-(NSString *) title{
+    
+    return @"Richalll escribe una notica içi!!";
+}
+
+// Subtítulo de la anotación
+-(NSString *)subtitle{
+    
+    // Concateno por líneas
+    NSArray *lines = [self.address componentsSeparatedByString:@"\n"];
+    
+    // Creo cadena mutable
+    NSMutableString *concat = [@"" mutableCopy];
+    
+    // Recorro las direcciones, las concateno y les añado un espacio en blanco
+    for (NSString *line in lines) {
+        [concat appendFormat:@"%@ ", line];
+    }
+    return concat;
+}
+
+// Devuelvo la cordenada en formato 'C' de Core Location
+-(CLLocationCoordinate2D) coordinate{
+    
+    return CLLocationCoordinate2DMake(self.latitudValue, self.longitudeValue);
+}
+
+
+
+
+
+
+
 
 @end

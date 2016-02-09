@@ -24,8 +24,10 @@
     self.model = [AGTSimpleCoreDataStack coreDataStackWithModelName:@"Everpobre"];
     
     if(ADD_DUMMY_DATA){
-        [self trastearConDatos];
-        [self predicatesNotebooks];
+        [self addDummyData];
+        //[self predicatesNotebooks];
+        
+        // Inicio el inspector Gadget, noo el del contexto
         [self printContextState];
     }
     
@@ -153,6 +155,25 @@
                  notebook:lugares
                   context:self.model.context];
     
+    MGCNotebook *otrosLugares = [MGCNotebook notebookWithName:@"Lugares donde me han pasado cosas raras"
+                                                      context:self.model.context];
+    
+    [MGCNote noteWithName:@"Puerta del Sol"
+                 notebook:otrosLugares
+                  context:self.model.context];
+    
+    [MGCNote noteWithName:@"Tatooine"
+                 notebook:otrosLugares
+                  context:self.model.context];
+    
+    [MGCNote noteWithName:@"Dantooine"
+                 notebook:otrosLugares
+                  context:self.model.context];
+    
+    [MGCNote noteWithName:@"Solaria"
+                 notebook:otrosLugares
+                  context:self.model.context];
+    
     // Guardo
     [self save];
     
@@ -193,11 +214,6 @@
     }else{
         NSLog(@"Results %@", results);
     }
-    
-    // Elimino
-    //[self.model.context deleteObject:pampita];
-    
-    
 }
 
 -(void)save{
@@ -211,7 +227,7 @@
     
     if (AUTO_SAVE) {
         
-        NSLog(@"Autoguardando....");
+        NSLog(@"Autoguardandorrr....");
         
         // Guardo
         [self save];
@@ -225,7 +241,7 @@
 }
 
 
-#pragma mark - Predicate
+#pragma mark - Predicate Playground
 
 -(void) predicatesNotebooks{
     
@@ -239,18 +255,17 @@
     NSPredicate *pampita = [NSCompoundPredicate andPredicateWithSubpredicates:@[novias,
                                                                                 [NSPredicate predicateWithFormat:@"name CONTAINS[cd] 'pampita'"]]];
     
-    // Creo el Fetch request
+    // Creo el Fetch request => Las pecadorasrrrr
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[MGCNote entityName]];
-    
-    // Creo un array para los resultados
-    NSArray *results = nil;
     
     // Selecciono las ex-novias
     request.predicate = novias;
-    results = [self.model executeRequest:request
-                               withError:^(NSError *error) {
-                                   NSLog(@"Error buscando %@", request);
-                               }];
+    
+    // Creo un array para los resultados
+    NSArray *results = [self.model executeRequest:request
+                                        withError:^(NSError *error) {
+                                            NSLog(@"Error buscando %@", request);
+                                        }];
     
     // Muestro los objetos de la búsqueda
     NSLog(@"Novias: \n %@", results);
@@ -259,7 +274,7 @@
     request.predicate = davalos;
     results = [self.model executeRequest:request
                                withError:^(NSError *error) {
-                                   NSLog(@"Error buscando a las chiquillas %@, cachis en la mar...", davalos);
+                                   NSLog(@"Error buscando a las chiquillas %@, cachis en la mar...", request);
                                    
                                }];
     
@@ -303,7 +318,6 @@
                afterDelay:5];
     
 }
-
 
 
 @end
