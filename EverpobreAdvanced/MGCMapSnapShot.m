@@ -130,24 +130,5 @@
     }];
     
     // NOTA: nos vamos a 'MGCLocation.m' para usar este 'snapshot'
-    // ya que cuando se crea una locatio
-    
-    
-    
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @end

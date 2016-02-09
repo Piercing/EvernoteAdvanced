@@ -26,15 +26,15 @@
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="notebook" inverseEntity="Note" syncable="YES"/>
     </entity>
     <entity name="Photo" representedClassName="MGCPhoto" syncable="YES">
-        <attribute name="imageData" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <relationship name="notes" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="photo" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
         <element name="Location" positionX="-369" positionY="-369" width="128" height="120"/>
+        <element name="MapSnapshot" positionX="-387" positionY="-378" width="128" height="75"/>
         <element name="NamedEntity" positionX="-270" positionY="-504" width="128" height="88"/>
         <element name="Note" positionX="-414" positionY="-322" width="128" height="105"/>
         <element name="Notebook" positionX="-155" positionY="-306" width="128" height="60"/>
-        <element name="Photo" positionX="-594" positionY="-315" width="128" height="30"/>
-        <element name="MapSnapshot" positionX="-387" positionY="-378" width="128" height="75"/>
+        <element name="Photo" positionX="-594" positionY="-315" width="128" height="75"/>
     </elements>
 </model>

@@ -28,6 +28,7 @@
 		522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814AB1C5B149E009D07F0 /* UIViewController+Navigation.m */; };
 		522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522814AE1C5B1831009D07F0 /* MGCNotebookCellView.xib */; };
 		522814B21C5B1A71009D07F0 /* MGCNotebookCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */; };
+		522FE4CA1C6AADD80064112A /* no-image-available.png in Resources */ = {isa = PBXBuildFile; fileRef = 522FE4C91C6AADD80064112A /* no-image-available.png */; };
 		526218641C681A9900A9777B /* MGCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 526218631C681A9900A9777B /* MGCLocation.m */; };
 		526218671C681AA300A9777B /* _MGCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 526218661C681AA300A9777B /* _MGCLocation.m */; };
 		526218701C685B4C00A9777B /* placemark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5262186F1C685B4C00A9777B /* placemark.png */; };
@@ -97,6 +98,7 @@
 		522814AE1C5B1831009D07F0 /* MGCNotebookCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGCNotebookCellView.xib; sourceTree = "<group>"; };
 		522814B01C5B1A71009D07F0 /* MGCNotebookCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebookCellView.h; sourceTree = "<group>"; };
 		522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebookCellView.m; sourceTree = "<group>"; };
+		522FE4C91C6AADD80064112A /* no-image-available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-image-available.png"; sourceTree = "<group>"; };
 		526218611C68157B00A9777B /* Everpobre2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre2.xcdatamodel; sourceTree = "<group>"; };
 		526218621C681A9900A9777B /* MGCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCLocation.h; sourceTree = "<group>"; };
 		526218631C681A9900A9777B /* MGCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCLocation.m; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				521A0A711C696CB7006F5558 /* noSnapshot.png */,
 				5262186F1C685B4C00A9777B /* placemark.png */,
 				522139D01C656D1F0047BB9C /* City-No-Camera-icon.png */,
+				522FE4C91C6AADD80064112A /* no-image-available.png */,
 				522139CA1C65657F0047BB9C /* noImage.png */,
 			);
 			name = Resources;
@@ -440,6 +443,7 @@
 				526218701C685B4C00A9777B /* placemark.png in Resources */,
 				522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */,
 				5268D9DE1C582BFB004B6BB2 /* LaunchScreen.storyboard in Resources */,
+				522FE4CA1C6AADD80064112A /* no-image-available.png in Resources */,
 				521A0A721C696CB7006F5558 /* noSnapshot.png in Resources */,
 				5270EC2D1C66FBFF00B9FC5F /* MGCPhotoViewController.xib in Resources */,
 				522139D61C658D270047BB9C /* MGCNoteViewController.xib in Resources */,

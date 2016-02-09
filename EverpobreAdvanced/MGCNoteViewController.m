@@ -75,12 +75,12 @@
     // // Ahora snapshot dichoso
     img = self.model.location.mapSnapshot.image;
     // Si tengo location 'smapshot => YES
-    self.mapSnapshotView.userInteractionEnabled = YES;
+    //self.mapSnapshotView.userInteractionEnabled = YES;
     // Sino tengo imagen, tiro de la que acabo de incorporar =>'img'
     if (!img) {
         img = [UIImage imageNamed:@"noSnapshot.png"];
         // Sino tengo location 'smapshot => NO
-        self.mapSnapshotView.userInteractionEnabled = NO;
+        //self.mapSnapshotView.userInteractionEnabled = NO;
     }
     
     // Se lo paso a la imagen
@@ -454,11 +454,11 @@
     
     UIImage *img = self.model.location.mapSnapshot.image;
     // Si tengo location 'smapshot => YES
-    self.mapSnapshotView.userInteractionEnabled = YES;
+    //self.mapSnapshotView.userInteractionEnabled = YES;
     // Sino tengo imagen, tiro de la que acabo de incorporar =>'img'
     if (!img) {
         // Sino tengo location 'smapshot => NO
-        self.mapSnapshotView.userInteractionEnabled = NO;
+        //self.mapSnapshotView.userInteractionEnabled = NO;
         img = [UIImage imageNamed:@"noSnapshot.png"];
     }
     

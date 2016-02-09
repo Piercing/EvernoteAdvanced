@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage.png" highlightedImage="noImage.png" id="BjD-53-fUO">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image-available.png" highlightedImage="no-image-available.png" id="BjD-53-fUO">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -62,6 +62,6 @@
         </view>
     </objects>
     <resources>
-        <image name="noImage.png" width="285" height="174"/>
+        <image name="no-image-available.png" width="300" height="500"/>
     </resources>
 </document>
