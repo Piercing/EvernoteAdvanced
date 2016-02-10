@@ -154,6 +154,15 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
                                 [NSSortDescriptor sortDescriptorWithKey:MGCNamedEntityAttributes.creationDate
                                                               ascending:NO]];
     
+    // Modifico el'FetchRequest' para que no pille todos los objetos
+    // que responde al 'FetchRequest', sino hacerlo por lotes cogiendo
+    // por ejemplo, los 20 primeros. Tamaño de lotes =>'fetchBatchSize'
+    // Le indico que cargue el doble de lo que va a mostrar, si caben
+    // unas diez celdas en la vista de la tabla le indico el doble: 20.
+    // Tendrá efecto a medida que vayan creciendo las libretas y notas.
+    // MEJORAMOS ASÍ EL USO DE MOMORIA Y EL RENDIMIENTO DEL DISPOSITIVO.
+    request.fetchBatchSize = 20;
+    
     // Añado predicados para filtrar las notas a mostrar
     // 'notebook' tiene que ser igual a la libreta sobre la que hemos tocado.
     // Esto lo podemos saber mediante el 'indexpath'
