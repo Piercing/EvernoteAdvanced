@@ -17,7 +17,7 @@
     // que se va a guardar en Core Data es lo último que hemos recibido.
     // Se la paso en formato NSData que es lo que guarda Core Data.
     // Con esto Core Data ya tiene su photo de tipo NSData y tan contenta.
-    self.imageData = UIImagePNGRepresentation(image);
+    self.imageData = UIImageJPEGRepresentation(image, 0.9);
     
 }
 

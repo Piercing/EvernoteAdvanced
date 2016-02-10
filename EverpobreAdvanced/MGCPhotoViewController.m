@@ -8,6 +8,7 @@
 
 #import "MGCPhotoViewController.h"
 #import "MGCPhoto.h"
+#import "UIImage+Resize.h"
 // Con esto importo el '.h' y añadida la framework
 @import CoreImage;
 
@@ -166,7 +167,7 @@
 }
 
 - (IBAction)zoomToFace:(id)sender {
-
+    
     NSArray *features = [self featuresInImage:self.photoView.image];
     
     if (features) {
@@ -215,19 +216,56 @@
 -(void) imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
-    // Momento crítico, pico de memoria
+    // ¡¡¡¡Momento crítico, pico de memoriarrr!!!!
     
-    // Saco la imagen del dictionary 'info'
-    UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
+    __block UIImage *img  = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    // Rápidamente se lo paso a Core Data, que es el más cualificado para gestionar este tipo de
-    // datos, guardarlos en disco y que caiga el pico de menoria, corriendo que viene YODDARRRR!!
-    self.model.image = img;
+    // Obtengo la cantidad de pixeles x punto que tiene la image en forma de cadena
+    NSLog(@"Size of image: %@", NSStringFromCGSize(img.size));
+    
+    // Obtengo el tamaño de la pantalla.
+    CGRect screenBounds = [[UIScreen mainScreen]bounds];
+    // 'scale' me dice la cantidad de pixeles x punto que tiene la pantalla
+    CGFloat screenScale = [[UIScreen mainScreen]scale];
+    
+    // Obtengo el tamaño de la pantalla teniendo en cuenta
+    // su tamaño en puntos y la cantidad de pixeles por punto.
+    CGSize screenSize = CGSizeMake(screenBounds.size.width *screenScale,
+                                   screenBounds.size.height *screenScale);
+    
+    // Los imprimo
+    NSLog(@"Size of screen: %@", NSStringFromCGSize(screenSize));
+    
+    NSLog(@"Image is %f time bigger!", img.size.width / (screenBounds.size.width * screenScale));
+    
+    // Salgo de aquí echando leches, Yodero el útlimo :D
+    // Activo el 'activityView'
+    [self.activityView startAnimating];
+    // La mando a 2º plano para hacer el resize de la imagen.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        // Gracias al amigo 'Trevor' mediante esta sola línea de código puedo reducir mucho el
+        // consumo de memoria, además de que ajusta la horientación adecuada al sacer la foto.
+        // Como buen hijo de un pueblo de tradicón antiquísima de productos porcinos y secaderos
+        // de jamones, como es Serón, un pueblo del valle del Almanzora situado en la sierra de
+        // Almería y por debajo del observatorio de Calar Alto, donde se puede vislumbrar como
+        // Clint Easwood hacia del 'Bueno' en la peli 'El bueno, el feo y el malo' en el desierto
+        // de Tabernas, me da a mi que el jamón se lo mando yo desde aquí, por la gloria de mi madreeerrrr.
+        img = [img resizedImage:screenSize interpolationQuality:kCGInterpolationMedium];
+        
+        // Ya en el hilo principal actualizo
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.photoView.image = img;
+            [self.activityView stopAnimating];
+            self.model.image = img;
+        });
+    });
     
     // Tengo que quitar el imagePicker de enmedio
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+                                 
+                             }];
     
 }
 

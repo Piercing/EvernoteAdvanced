@@ -29,6 +29,9 @@
 		522814AF1C5B1831009D07F0 /* MGCNotebookCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522814AE1C5B1831009D07F0 /* MGCNotebookCellView.xib */; };
 		522814B21C5B1A71009D07F0 /* MGCNotebookCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */; };
 		522FE4CA1C6AADD80064112A /* no-image-available.png in Resources */ = {isa = PBXBuildFile; fileRef = 522FE4C91C6AADD80064112A /* no-image-available.png */; };
+		522FE4D11C6ABBC40064112A /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 522FE4CC1C6ABBC40064112A /* UIImage+Alpha.m */; };
+		522FE4D21C6ABBC40064112A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 522FE4CE1C6ABBC40064112A /* UIImage+Resize.m */; };
+		522FE4D31C6ABBC40064112A /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 522FE4D01C6ABBC40064112A /* UIImage+RoundedCorner.m */; };
 		526218641C681A9900A9777B /* MGCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 526218631C681A9900A9777B /* MGCLocation.m */; };
 		526218671C681AA300A9777B /* _MGCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 526218661C681AA300A9777B /* _MGCLocation.m */; };
 		526218701C685B4C00A9777B /* placemark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5262186F1C685B4C00A9777B /* placemark.png */; };
@@ -99,6 +102,12 @@
 		522814B01C5B1A71009D07F0 /* MGCNotebookCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCNotebookCellView.h; sourceTree = "<group>"; };
 		522814B11C5B1A71009D07F0 /* MGCNotebookCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCNotebookCellView.m; sourceTree = "<group>"; };
 		522FE4C91C6AADD80064112A /* no-image-available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-image-available.png"; sourceTree = "<group>"; };
+		522FE4CB1C6ABBC40064112A /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		522FE4CC1C6ABBC40064112A /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		522FE4CD1C6ABBC40064112A /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		522FE4CE1C6ABBC40064112A /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		522FE4CF1C6ABBC40064112A /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		522FE4D01C6ABBC40064112A /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		526218611C68157B00A9777B /* Everpobre2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre2.xcdatamodel; sourceTree = "<group>"; };
 		526218621C681A9900A9777B /* MGCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCLocation.h; sourceTree = "<group>"; };
 		526218631C681A9900A9777B /* MGCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCLocation.m; sourceTree = "<group>"; };
@@ -206,6 +215,12 @@
 		522814A91C5B13EF009D07F0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				522FE4CB1C6ABBC40064112A /* UIImage+Alpha.h */,
+				522FE4CC1C6ABBC40064112A /* UIImage+Alpha.m */,
+				522FE4CD1C6ABBC40064112A /* UIImage+Resize.h */,
+				522FE4CE1C6ABBC40064112A /* UIImage+Resize.m */,
+				522FE4CF1C6ABBC40064112A /* UIImage+RoundedCorner.h */,
+				522FE4D01C6ABBC40064112A /* UIImage+RoundedCorner.m */,
 				522814AA1C5B149E009D07F0 /* UIViewController+Navigation.h */,
 				522814AB1C5B149E009D07F0 /* UIViewController+Navigation.m */,
 			);
@@ -468,10 +483,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522FE4D21C6ABBC40064112A /* UIImage+Resize.m in Sources */,
 				526218671C681AA300A9777B /* _MGCLocation.m in Sources */,
 				522814A51C59C761009D07F0 /* MGCCoreDataTableViewController.m in Sources */,
 				5268DA1D1C585188004B6BB2 /* MGCNamedEntity.m in Sources */,
 				5268DA161C58516F004B6BB2 /* _MGCNotebook.m in Sources */,
+				522FE4D11C6ABBC40064112A /* UIImage+Alpha.m in Sources */,
 				522814B21C5B1A71009D07F0 /* MGCNotebookCellView.m in Sources */,
 				522139BF1C6554B00047BB9C /* MGCNoteCellView.m in Sources */,
 				522139D51C658D270047BB9C /* MGCNoteViewController.m in Sources */,
@@ -482,6 +499,7 @@
 				52C53B9B1C61837900D1BFDF /* MGCNotesTableViewController.m in Sources */,
 				522814AC1C5B149E009D07F0 /* UIViewController+Navigation.m in Sources */,
 				5207F3B61C585AF500C86E8A /* _MGCPhoto.m in Sources */,
+				522FE4D31C6ABBC40064112A /* UIImage+RoundedCorner.m in Sources */,
 				5207F3B91C585B0B00C86E8A /* MGCPhoto.m in Sources */,
 				521A0A6D1C69565B006F5558 /* _MGCMapSnapShot.m in Sources */,
 				526218641C681A9900A9777B /* MGCLocation.m in Sources */,
